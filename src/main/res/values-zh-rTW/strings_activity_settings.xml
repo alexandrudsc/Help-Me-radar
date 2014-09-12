@@ -1,0 +1,39 @@
+<!-- All this strings will be used in settings screen.They explain briefly
+    the functionality of each feature -->
+<!-- chineese -->
+<resources>
+    <string name="title_activity_settings">設置</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Section in settings referring to general preference -->
+    <string name="pref_header_general">一般</string>
+
+    <!-- Section in settings referring to GPS preference-->
+    <string name="pref_title_gps">訪問我的位置</string>
+    <string name="pref_description_gps">見GPS坐標</string>
+
+    <!-- Section in settings referring to user name preference-->
+    <string name="pref_title_name">產品名稱</string>
+    <string name="pref_default_name">John Doe</string>
+
+    <!-- Section in settings referring to message template preference  -->
+    <string name="pref_title_message">消息模板</string>
+    <string name="pref_default_message">我需要幫助！請趕快行動吧！</string>
+
+    <!-- Section in settings referring to media button preference -->
+    <string name="pref_title_headphones">使用有線按鈕</string>
+    <string name="pref_description_headphones">發送恐慌的消息時，按下媒體按鈕</string>
+
+
+    <!-- Section in settings referring to notifications preference -->
+    <string name="pref_header_notifications">通知</string>
+    <string name="pref_title_new_message_notifications">新郵件通知</string>
+
+    <!-- Section in settings referring to ringtone preference -->
+    <string name="pref_title_ringtone">鈴聲</string>
+    <string name="pref_ringtone_silent">沉默</string>
+
+    <!-- Section in settings referring to vibration preference -->
+    <string name="pref_title_vibrate">震動</string>
+</resources>

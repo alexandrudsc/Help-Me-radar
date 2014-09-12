@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!-- Text dimen for danish -->
+<resources>
+    <dimen name="btn_text_size">31sp</dimen>
+</resources>

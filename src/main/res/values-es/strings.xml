@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!-- spanish -->
+<resources>
+    <!-- The name of tha application -->
+    <string name="app_name">Ayúdame radar</string>
+    <!-- Text displayed on settings menu button -->
+    <string name="action_settings">Ajustes</string>
+    <string name="text_btn_type_new_contact">Escribir un nuevo contacto</string>
+
+    <!-- Text when no GPS coordinates are available -->
+    <string name="no_coords">Ubicación no disponible</string>
+
+    <!-- Label for GPS coordinates -->
+    <string name="gps_coords">Coords</string>
+
+    <!-- Text displayed on button.Maximum 9 characters and MUST be wrapped by the button image (interjection). -->
+    <string name="label_button">Ayuadame!</string>
+
+    <!-- Title displayed when the alert screen is shown-->
+    <string name="title_activity_alert">ALERTA</string>
+
+    <!-- Title displayed when the contacts screen is shown-->
+    <string name="title_activity_contacts">Contactos</string>
+
+    <!-- String displayed when no contacts chosen -->
+    <string name="no_contacts">No hay contactos</string>
+
+    <string name="bluetooth">Bluetooth</string>
+    <string name="contacts">Contactos</string>
+
+    <string name="add_contact">Añadir contact</string>
+
+    <!-- String displayed below each contact -->
+    <string name="hold_to_remove">(mantener pulsada para eliminar)</string>
+
+    <!-- String displayed in toast shown when device does not support bluetooth-->
+    <string name="no_bluetooth">No bluetooth</string>
+
+    <!-- Strings displayed in dialog asking user to enable GPS -->
+    <string name="enable_bluetooth_title">Configuración de GPS</string>
+    <string name="enable_bluetooth_text">GPS no está activado. ¿Quieres ir al menú de configuración? </string>
+
+    <!-- Strings displayed as subtitle for bluetooth connection status -->
+    <string name="title_connecting">Conexión</string>
+    <string name="title_connected_to">Conectado</string>
+    <string name="title_not_connected">No conectado</string>
+    <string name="not_requested_bluetooth"> </string>
+
+    <!-- Dialog showing when unable to connect -->
+    <string name="title_dialog_unable_to_connect">No se ha podido conectar el dispositivo.Inténtalo de nuevo?</string>
+    <string name="reject_dialog">No</string>
+    <string name="accept_dialog">Sí</string>
+
+    <!-- Dialog showing when bluetooth button pressed -->
+    <string name="title_dialog_scan_again">Escanear nuevamente los dispositivos?</string>
+    <string name="reject_scan_dialog">No, apague</string>
+    <string name="accept_scan_dialog">Sí</string>
+
+    <!-- Strings in dialog when create new contact -->
+    <string name="label_name">Nombre</string>
+    <string name="label_phone_number">Número de teléfono</string>
+
+    <string name="positive_button">Done</string>
+    <string name="negative_button">Cancelar</string>
+
+    <!-- String used in toasts to tell SMS sending status -->
+    <string name="sms_sent">SMS enviados</string>
+    <string name="no_service">No hay servicio</string>
+    <string name="generic_failure">Error genérico</string>
+    <string name="null_pdu">Null PDU</string>
+    <string name="radio_off">Radio off</string>
+
+    <!-- Abreviations for latitude and longitude.Displayed on the top of the main screen -->
+    <string name="latitude">Lat</string>
+    <string name="longitude">Lng</string>
+
+    <!-- String used in toast showed when bluetooth connection events are triggerd -->
+    <string name="connection_lost">La conexión se ha perdido</string>
+    <string name="connected_to">Conectado a</string>
+
+    <!-- Strings in available devices screen -->
+    <string name="scanning">Escaneo </string>
+    <string name="non_paired">No emparejado </string>
+    <string name="select_device">Seleccionar dispositivo </string>
+    <string name="none_found">No hay ningún dispositivo </string>
+    <string name="title_paired_devices">Los dispositivos vinculados </string>
+    <string name="title_other_devices">Otros dispositivos </string>
+    <string name="button_scan">Scan</string>
+
+</resources>

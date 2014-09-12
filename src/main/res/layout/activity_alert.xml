@@ -1,0 +1,36 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/alert_layout"
+    android:background="@android:color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/activity_horizontal_margin"
+    tools:context="com.developer.alexandru.helpmeradar.AlertActivity" >
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <TextView android:id="@+id/fullscreen_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="3"
+        android:keepScreenOn="true"
+        android:background="@android:color/transparent"
+        android:textColor="#33b5e5"
+        android:textStyle="bold"
+        android:textSize="@dimen/alert_text_size"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/link"
+        android:layout_width="match_parent"
+        android:background="@android:color/transparent"
+        android:autoLink="web"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:textSize="@dimen/alert_text_size"/>
+
+</LinearLayout>

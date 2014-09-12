@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!-- chineese traditional -->
+<resources>
+    <!-- The name of tha application -->
+    <string name="app_name">幫我雷達</string>
+    <!-- Text displayed on settings menu button -->
+    <string name="action_settings">設置</string>
+    <string name="text_btn_type_new_contact">輸入新的聯繫人</string>
+
+    <!-- Text when no GPS coordinates are available -->
+    <string name="no_coords">位置不可用</string>
+
+    <!-- Label for GPS coordinates -->
+    <string name="gps_coords">Coords</string>
+
+    <!-- Text displayed on button.Maximum 9 characters and MUST be wrapped by the button image (interjection). -->
+    <string name="label_button">幫我</string>
+
+    <!-- Title displayed when the alert screen is shown-->
+    <string name="title_activity_alert">警報</string>
+
+    <!-- Title displayed when the contacts screen is shown-->
+    <string name="title_activity_contacts">聯繫方式</string>
+
+    <!-- String displayed when no contacts chosen -->
+    <string name="no_contacts">無接觸</string>
+
+    <string name="bluetooth">Bluetooth</string>
+    <string name="contacts">聯繫方式</string>
+
+    <string name="add_contact">添加聯繫人</string>
+
+    <!-- String displayed below each contact -->
+    <string name="hold_to_remove">（保留刪除）</string>
+
+    <!-- String displayed in toast shown when device does not support bluetooth-->
+    <string name="no_bluetooth">沒有藍牙</string>
+
+    <!-- Strings displayed in dialog asking user to enable GPS -->
+    <string name="enable_bluetooth_title">GPS設置</string>
+    <string name="enable_bluetooth_text">全球定位系統未啟用。你想進入設置菜單？ </string>
+
+    <!-- Strings displayed as subtitle for bluetooth connection status -->
+    <string name="title_device_found">設備發現</string>
+    <string name="title_connecting">連接</string>
+    <string name="title_connected_to">連接</string>
+    <string name="title_not_connected">沒有連接</string>
+    <string name="not_requested_bluetooth"> </string>
+
+    <!-- Dialog showing when unable to connect -->
+    <string name="title_dialog_unable_to_connect">無法連接。再試一次？</string>
+    <string name="reject_dialog">無</string>
+    <string name="accept_dialog">是的</string>
+
+    <!-- Dialog showing when bluetooth button pressed -->
+    <string name="title_dialog_scan_again">再次掃描設備？</string>
+    <string name="reject_scan_dialog">不，關閉</string>
+    <string name="accept_scan_dialog">是的</string>
+
+    <!-- Strings in dialog when create new contact -->
+    <string name="label_name">產品名稱</string>
+    <string name="label_phone_number">電話號碼</string>
+
+    <string name="positive_button">做</string>
+    <string name="negative_button">取消</string>
+
+    <!-- String used in toasts to tell SMS sending status -->
+    <string name="sms_sent">發送留言</string>
+    <string name="no_service">沒有服務</string>
+    <string name="generic_failure">一般故障</string>
+    <string name="null_pdu">Null PDU</string>
+    <string name="radio_off">無線電關閉</string>
+
+    <!-- Abreviations for latitude and longitude.Displayed on the top of the main screen -->
+    <string name="latitude">緯度</string>
+    <string name="longitude">經度</string>
+
+    <!-- String used in toast showed when bluetooth connection events are triggerd -->
+    <string name="connection_lost">連接丟失</string>
+    <string name="connected_to">連接</string>
+
+    <!-- Strings in available devices screen -->
+    <string name="scanning">搜索 </string>
+    <string name="non_paired">非配對 </string>
+    <string name="select_device">選擇設備 </string>
+    <string name="none_found">無設備 </string>
+    <string name="title_paired_devices">配對設備 </string>
+    <string name="title_other_devices">其他設備 </string>
+    <string name="button_scan">搜索</string>
+</resources>

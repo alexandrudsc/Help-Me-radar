@@ -1,0 +1,87 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@android:color/black"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:src="@drawable/background3"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView android:id="@+id/label_gps_coords"
+        android:text="@string/no_coords"
+        android:textSize="@dimen/gps_coord_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:background="@android:color/black"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true" />
+
+
+    <ImageButton
+        android:id="@+id/button"
+        android:layout_centerInParent="true"
+        android:layout_width="@dimen/btn_dimen"
+        android:layout_height="@dimen/btn_dimen"
+        android:background="@drawable/button_background" />
+
+    <TextView
+        android:id="@+id/label_button"
+        android:text="@string/label_button"
+        android:textStyle="bold"
+        android:textSize="60sp"
+        android:textColor="@android:color/white"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/bluetooth_status"
+        android:layout_below="@id/label_gps_coords"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/small_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageButton
+        android:id="@+id/settings"
+        android:layout_width="@dimen/action_button_width"
+        android:layout_height="@dimen/action_button_height"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/settings"/>
+
+    <ImageButton
+        android:id="@+id/bluetooth"
+        android:layout_width="@dimen/action_button_width"
+        android:layout_height="@dimen/action_button_height"
+        android:layout_above="@id/settings"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/bluet"/>
+
+    <ImageButton
+        android:id="@+id/people"
+        android:layout_width="@dimen/action_button_width"
+        android:layout_height="@dimen/action_button_height"
+        android:layout_above="@id/settings"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/ic_action_group"/>
+
+    <RelativeLayout
+        android:id="@+id/destination"
+        android:layout_width="@dimen/action_button_width"
+        android:layout_height="@dimen/action_button_height"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/settings"/>
+
+
+</RelativeLayout>

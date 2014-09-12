@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!-- japaneese -->
+<resources>
+    <!-- The name of tha application -->
+    <string name="app_name">ミーレーダーヘルプ</string>
+    <!-- Text displayed on settings menu button -->
+    <string name="action_settings">設定</string>
+    <string name="text_btn_type_new_contact">新しい連絡先を入力します</string>
+
+    <!-- Text when no GPS coordinates are available -->
+    <string name="no_coords">使用できない場所</string>
+
+    <!-- Label for GPS coordinates -->
+    <string name="gps_coords">Coords</string>
+
+    <!-- Text displayed on button.Maximum 9 characters and MUST be wrapped by the button image (interjection). -->
+    <string name="label_button">助けて</string>
+
+    <!-- Title displayed when the alert screen is shown-->
+    <string name="title_activity_alert">警報</string>
+
+    <!-- Title displayed when the contacts screen is shown-->
+    <string name="title_activity_contacts">電話の連絡先</string>
+
+    <!-- String displayed when no contacts chosen -->
+    <string name="no_contacts">連絡先なし</string>
+
+    <string name="bluetooth">Bluetooth</string>
+    <string name="contacts">電話の連絡先</string>
+
+    <string name="add_contact">連絡先を追加</string>
+
+    <!-- String displayed below each contact -->
+    <string name="hold_to_remove">（削除したまま）</string>
+
+    <!-- String displayed in toast shown when device does not support bluetooth-->
+    <string name="no_bluetooth">No bluetooth</string>
+
+    <!-- Strings displayed in dialog asking user to enable GPS -->
+    <string name="enable_bluetooth_title">GPSの設定</string>
+    <string name="enable_bluetooth_text">GPSが有効になっていません。あなたは、設定メニューに行きたいですか？ </string>
+
+    <!-- Strings displayed as subtitle for bluetooth connection status -->
+    <string name="title_connecting">接続する</string>
+    <string name="title_connected_to">接続</string>
+    <string name="title_not_connected">接続されていません</string>
+    <string name="not_requested_bluetooth"> </string>
+
+    <!-- Dialog showing when unable to connect -->
+    <string name="title_dialog_unable_to_connect">デバイスに接続することができません。再試行しますか？</string>
+    <string name="reject_dialog">いいえ</string>
+    <string name="accept_dialog">はい</string>
+
+    <!-- Dialog showing when bluetooth button pressed -->
+    <string name="title_dialog_scan_again">デバイスのために再度スキャン？</string>
+    <string name="reject_scan_dialog">いいえ、オフにする</string>
+    <string name="accept_scan_dialog">はい</string>
+
+    <!-- Strings in dialog when create new contact -->
+    <string name="label_name">名前</string>
+    <string name="label_phone_number">電話番号</string>
+
+    <string name="positive_button">終わった</string>
+    <string name="negative_button">キャンセル</string>
+
+    <!-- String used in toasts to tell SMS sending status -->
+    <string name="sms_sent">メッセージ送ら</string>
+    <string name="no_service">いいえサービスん</string>
+    <string name="generic_failure">ジェネリック故障</string>
+    <string name="null_pdu">Null PDU</string>
+    <string name="radio_off">ラジオオフ</string>
+
+    <!-- Abreviations for latitude and longitude.Displayed on the top of the main screen -->
+    <string name="latitude">緯度</string>
+    <string name="longitude">経度</string>
+
+    <!-- String used in toast showed when bluetooth connection events are triggerd -->
+    <string name="connection_lost">接続が失わ</string>
+    <string name="connected_to">に接続</string>
+
+    <!-- Strings in available devices screen -->
+    <string name="scanning">検索 </string>
+    <string name="non_paired">非ペア </string>
+    <string name="select_device">デバイスの選択 </string>
+    <string name="none_found">いいえデバイスません </string>
+    <string name="title_paired_devices">デバイスの組み合わせ </string>
+    <string name="title_other_devices">その他のデバイス </string>
+    <string name="button_scan">検索</string>
+
+</resources>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The name of tha application -->
+    <string name="app_name">Help Me radar</string>
+    <!-- Text displayed on settings menu button -->
+    <string name="action_settings">Settings</string>
+    <string name="text_btn_type_new_contact">Type new contact</string>
+
+    <!-- Text when no GPS coordinates are available -->
+    <string name="no_coords">Location unavailable</string>
+
+    <!-- Label for GPS coordinates -->
+    <string name="gps_coords">Coords</string>
+
+    <!-- Text displayed on button.Maximum 9 characters and MUST be wrapped by the button image (interjection). -->
+    <string name="label_button">Help me!</string>
+
+    <!-- Title displayed when the alert screen is shown-->
+    <string name="title_activity_alert">ALERT</string>
+
+    <!-- Title displayed when the contacts screen is shown-->
+    <string name="title_activity_contacts">Contacts</string>
+
+    <!-- String displayed when no contacts chosen -->
+    <string name="no_contacts">No contacts</string>
+
+    <string name="bluetooth">Bluetooth</string>
+    <string name="contacts">Contacts</string>
+
+    <string name="add_contact">Add contact</string>
+
+    <!-- String displayed below each contact -->
+    <string name="hold_to_remove">(hold to remove)</string>
+
+    <!-- String displayed in toast shown when device does not support bluetooth-->
+    <string name="no_bluetooth">No bluetooth</string>
+
+    <!-- Strings displayed in dialog asking user to enable GPS -->
+    <string name="enable_bluetooth_title">GPS settings</string>
+    <string name="enable_bluetooth_text">GPS is not enabled. Do you want to go to settings menu? </string>
+
+    <!-- Strings displayed as subtitle for bluetooth connection status -->
+    <string name="title_connecting">Connecting</string>
+    <string name="title_connected_to">Connected</string>
+    <string name="title_not_connected">Not connected</string>
+    <string name="not_requested_bluetooth"> </string>
+
+    <!-- Dialog showing when unable to connect -->
+    <string name="title_dialog_unable_to_connect">Unable to connect device. Try again?</string>
+    <string name="reject_dialog">No</string>
+    <string name="accept_dialog">Yes</string>
+
+    <!-- Dialog showing when bluetooth button pressed -->
+    <string name="title_dialog_scan_again">Scan again for devices?</string>
+    <string name="reject_scan_dialog">No, turn off</string>
+    <string name="accept_scan_dialog">Yes</string>
+
+    <!-- Strings in dialog when create new contact -->
+    <string name="label_name">Name</string>
+    <string name="label_phone_number">Phone number</string>
+
+    <string name="positive_button">Done</string>
+    <string name="negative_button">Cancel</string>
+
+    <!-- String used in toasts to tell SMS sending status -->
+    <string name="sms_sent">SMS sent</string>
+    <string name="no_service">No service</string>
+    <string name="generic_failure">Generic failure</string>
+    <string name="null_pdu">Null PDU</string>
+    <string name="radio_off">Radio off</string>
+
+    <!-- Abreviations for latitude and longitude.Displayed on the top of the main screen -->
+    <string name="latitude">Lat</string>
+    <string name="longitude">Lng</string>
+
+    <!-- String used in toast showed when bluetooth connection events are triggerd -->
+    <string name="connection_lost">Device connection was lost</string>
+    <string name="connected_to">Connected to</string>
+    <string name="bluetooth_invisible">Invisible</string>
+    <string name="bluetooth_visible">Visible</string>
+
+    <!-- Strings in available devices screen -->
+    <string name="scanning">Scanning</string>
+    <string name="non_paired">Non paired</string>
+    <string name="select_device">Select device</string>
+    <string name="none_found">No device</string>
+    <string name="title_paired_devices">Paired devices</string>
+    <string name="title_other_devices">Other devices</string>
+    <string name="button_scan">Scan</string>
+
+</resources>

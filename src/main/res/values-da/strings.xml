@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!-- Danish -->
+<resources>
+    <!-- The name of tha application -->
+    <string name="app_name">Hjælp mig radar</string>
+    <!-- Text displayed on settings menu button -->
+    <string name="action_settings">Indstillinger</string>
+    <string name="text_btn_type_new_contact">Indtast ny kontakt</string>
+
+    <!-- Text when no GPS coordinates are available -->
+    <string name="no_coords">Placeringen er ikke tilgængelig</string>
+
+    <!-- Label for GPS coordinates -->
+    <string name="gps_coords">Coords</string>
+
+    <!-- Text displayed on button.Maximum 9 characters and MUST be wrapped by the button image (interjection). -->
+    <string name="label_button">Hjælp mig!</string>
+
+    <!-- Title displayed when the alert screen is shown-->
+    <string name="title_activity_alert">ALERT</string>
+
+    <!-- Title displayed when the contacts screen is shown-->
+    <string name="title_activity_contacts">Kontakter</string>
+
+    <!-- String displayed when no contacts chosen -->
+    <string name="no_contacts">Ingen kontaktpersoner</string>
+
+    <string name="bluetooth">Bluetooth</string>
+    <string name="contacts">Kontakter</string>
+
+    <string name="add_contact">Tilføj kontakt</string>
+
+    <!-- String displayed below each contact -->
+    <string name="hold_to_remove">(hold for at fjerne)</string>
+
+    <!-- String displayed in toast shown when device does not support bluetooth-->
+    <string name="no_bluetooth">No bluetooth</string>
+
+    <!-- Strings displayed in dialog asking user to enable GPS -->
+    <string name="enable_bluetooth_title">GPS-indstillinger</string>
+    <string name="enable_bluetooth_text">GPS er ikke aktiveret. Ønsker du at gå til indstillingsmenuen? </string>
+
+    <!-- Strings displayed as subtitle for bluetooth connection status -->
+    <string name="title_device_found">Enhed fundet</string>
+    <string name="title_connecting">Tilslutning</string>
+    <string name="title_connected_to">Forbundet</string>
+    <string name="title_not_connected">Ikke tilsluttet</string>
+    <string name="title_searching_bluetooth">Søgning</string>
+    <string name="title__state_idle">Idle</string>
+    <string name="not_requested_bluetooth"> </string>
+
+    <!-- Dialog showing when unable to connect -->
+    <string name="title_dialog_unable_to_connect">Kan ikke forbinde enheden.Prøv igen?</string>
+    <string name="reject_dialog">Nej</string>
+    <string name="accept_dialog">Ja</string>
+
+    <!-- Dialog showing when bluetooth button pressed -->
+    <string name="title_dialog_scan_again">Scan igen efter enheder?</string>
+    <string name="reject_scan_dialog">Nej, skal du slukke</string>
+    <string name="accept_scan_dialog">Ja</string>
+
+    <!-- Strings in dialog when create new contact -->
+    <string name="label_name">Navn</string>
+    <string name="label_phone_number">Telefonnummer</string>
+
+    <string name="positive_button">Udført</string>
+    <string name="negative_button">Annuller</string>
+
+    <!-- String used in toasts to tell SMS sending status -->
+    <string name="sms_sent">SMS sendt</string>
+    <string name="no_service">ingen service</string>
+    <string name="generic_failure">Almen fejl</string>
+    <string name="null_pdu">Null PDU</string>
+    <string name="radio_off">Radio slukket</string>
+
+    <!-- Abreviations for latitude and longitude.Displayed on the top of the main screen -->
+    <string name="latitude">Bre</string>
+    <string name="longitude">Læn</string>
+
+    <!-- String used in toast showed when bluetooth connection events are triggerd -->
+    <string name="connection_lost">Forbindelse tabt</string>
+    <string name="connected_to">Forbundet til</string>
+
+    <!-- Strings in available devices screen -->
+    <string name="scanning">Søgning </string>
+    <string name="non_paired">Ikke parret </string>
+    <string name="select_device">Vælg enhed </string>
+    <string name="none_found">ingen enhed </string>
+    <string name="title_paired_devices">Forbundne enheder </string>
+    <string name="title_other_devices">Andre enheder </string>
+    <string name="button_scan">Søg</string>
+
+</resources>

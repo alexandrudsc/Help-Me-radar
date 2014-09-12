@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!-- russian -->
+<resources>
+    <!-- The name of tha application -->
+    <string name="app_name">Помощь мне радар</string>
+    <!-- Text displayed on settings menu button -->
+    <string name="action_settings">Настройки</string>
+    <string name="text_btn_type_new_contact">Введите новый контакт</string>
+
+    <!-- Text when no GPS coordinates are available -->
+    <string name="no_coords">Расположение недоступен</string>
+
+    <!-- Label for GPS coordinates -->
+    <string name="gps_coords">Coords</string>
+
+    <!-- Text displayed on button.Maximum 9 characters and MUST be wrapped by the button image (interjection). -->
+    <string name="label_button">Помогите!</string>
+
+    <!-- Title displayed when the alert screen is shown-->
+    <string name="title_activity_alert">ALERT</string>
+
+    <!-- Title displayed when the contacts screen is shown-->
+    <string name="title_activity_contacts">Контакты</string>
+
+    <!-- String displayed when no contacts chosen -->
+    <string name="no_contacts">Нет контактов</string>
+
+    <string name="bluetooth">Bluetooth</string>
+    <string name="contacts">Контакты</string>
+
+    <string name="add_contact">Добавить контакт</string>
+
+    <!-- String displayed below each contact -->
+    <string name="hold_to_remove">(удерживайте для удаления)</string>
+
+    <!-- String displayed in toast shown when device does not support bluetooth-->
+    <string name="no_bluetooth">No bluetooth</string>
+
+    <!-- Strings displayed in dialog asking user to enable GPS -->
+    <string name="enable_bluetooth_title">настройки GPS</string>
+    <string name="enable_bluetooth_text">GPS не включен. Вы хотите пойти в меню настроек? </string>
+
+    <!-- Strings displayed as subtitle for bluetooth connection status -->
+    <string name="title_connecting">Подключение</string>
+    <string name="title_connected_to">Подключен</string>
+    <string name="title_not_connected">Не подключен</string>
+    <string name="not_requested_bluetooth"> </string>
+
+    <!-- Dialog showing when unable to connect -->
+    <string name="title_dialog_unable_to_connect">Не удается подключиться устройство. Попробуйте еще раз?</string>
+    <string name="reject_dialog">Нет</string>
+    <string name="accept_dialog">Да</string>
+
+    <!-- Dialog showing when bluetooth button pressed -->
+    <string name="title_dialog_scan_again">Сканирование снова для устройств?</string>
+    <string name="reject_scan_dialog">Нет, отключить</string>
+    <string name="accept_scan_dialog">Да</string>
+
+    <!-- Strings in dialog when create new contact -->
+    <string name="label_name">Имя</string>
+    <string name="label_phone_number">номер телефона</string>
+
+    <string name="positive_button">Готово</string>
+    <string name="negative_button">Отменить</string>
+
+    <!-- String used in toasts to tell SMS sending status -->
+    <string name="sms_sent">SMS отправлено</string>
+    <string name="no_service">Никакое обслуживание</string>
+    <string name="generic_failure">Общий сбой</string>
+    <string name="null_pdu">Null PDU</string>
+    <string name="radio_off">Радио с</string>
+
+    <!-- Abreviations for latitude and longitude.Displayed on the top of the main screen -->
+    <string name="latitude">Шир</string>
+    <string name="longitude">Дол</string>
+
+    <!-- String used in toast showed when bluetooth connection events are triggerd -->
+    <string name="connection_lost">потерял соединения</string>
+    <string name="connected_to">Подключение к</string>
+
+    <!-- Strings in available devices screen -->
+    <string name="scanning">Поиск </string>
+    <string name="non_paired">без парные</string>
+    <string name="select_device">Выберите устройство </string>
+    <string name="none_found">Ни одно устройство </string>
+    <string name="title_paired_devices">Сопряженные устройства </string>
+    <string name="title_other_devices">Другие устройства </string>
+    <string name="button_scan">поиск</string>
+</resources>

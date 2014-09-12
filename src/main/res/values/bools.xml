@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Versions prior to KitKat -->
+<resources>
+    <bool name="pre_KitKat">true</bool>
+    <bool name="KitKat">false</bool>
+</resources>

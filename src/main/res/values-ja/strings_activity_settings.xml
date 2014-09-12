@@ -1,0 +1,40 @@
+<!-- All this strings will be used in settings screen.They explain briefly
+    the functionality of each feature -->
+<!-- japaneese -->
+<resources>
+
+    <string name="title_activity_settings">設定</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Section in settings referring to general preference -->
+    <string name="pref_header_general">将軍</string>
+
+    <!-- Section in settings referring to GPS preference-->
+    <string name="pref_title_gps">私の場所へのアクセス</string>
+    <string name="pref_description_gps">GPS座標を参照してください</string>
+
+    <!-- Section in settings referring to user name preference-->
+    <string name="pref_title_name">名前</string>
+    <string name="pref_default_name">John Doe</string>
+
+    <!-- Section in settings referring to message template preference  -->
+    <string name="pref_title_message">メッセージテンプレート</string>
+    <string name="pref_default_message">私は助けが必要！お急ぎください！</string>
+
+    <!-- Section in settings referring to media button preference -->
+    <string name="pref_title_headphones">利用有線ボタン</string>
+    <string name="pref_description_headphones">メディアボタンが押されたときにメッセージを送信</string>
+
+
+    <!-- Section in settings referring to notifications preference -->
+    <string name="pref_header_notifications">通知</string>
+    <string name="pref_title_new_message_notifications">新しいメッセージ通知</string>
+
+    <!-- Section in settings referring to ringtone preference -->
+    <string name="pref_title_ringtone">着メロ</string>
+    <string name="pref_ringtone_silent">サイレント</string>
+
+    <!-- Section in settings referring to vibration preference -->
+    <string name="pref_title_vibrate">振動する</string>
+</resources>

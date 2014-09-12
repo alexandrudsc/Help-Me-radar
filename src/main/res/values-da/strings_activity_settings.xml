@@ -1,0 +1,39 @@
+<!-- All this strings will be used in settings screen.They explain briefly
+    the functionality of each feature -->
+<!-- Danish -->
+<resources>
+    <string name="title_activity_settings">Indstillinger</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Section in settings referring to general preference -->
+    <string name="pref_header_general">Generelt</string>
+
+    <!-- Section in settings referring to GPS preference-->
+    <string name="pref_title_gps">Adgang til min placering</string>
+    <string name="pref_description_gps">Se GPS koordinater</string>
+
+    <!-- Section in settings referring to user name preference-->
+    <string name="pref_title_name">Navn</string>
+    <string name="pref_default_name">John Doe</string>
+
+    <!-- Section in settings referring to message template preference  -->
+    <string name="pref_title_message">Besked skabelon</string>
+    <string name="pref_default_message">Jeg har brug for hjælp! Skynd dig!</string>
+
+    <!-- Section in settings referring to media button preference -->
+    <string name="pref_title_headphones">Brug knap kabel</string>
+    <string name="pref_description_headphones">Send beskeder, når der trykkes på knappen medier</string>
+
+
+    <!-- Section in settings referring to notifications preference -->
+    <string name="pref_header_notifications">Bemærkninger</string>
+    <string name="pref_title_new_message_notifications">Nye meddelelsesnotifikationer</string>
+
+    <!-- Section in settings referring to ringtone preference -->
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">lydløs</string>
+
+    <!-- Section in settings referring to vibration preference -->
+    <string name="pref_title_vibrate">Vibrer</string>
+</resources>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!-- french -->
+<resources>
+    <!-- The name of tha application -->
+    <string name="app_name">Aidez-moi radar</string>
+    <!-- Text displayed on settings menu button -->
+    <string name="action_settings">Paramètres</string>
+    <string name="text_btn_type_new_contact">Tapez un nouveau contact</string>
+
+    <!-- Text when no GPS coordinates are available -->
+    <string name="no_coords">Emplacement non disponible</string>
+
+    <!-- Label for GPS coordinates -->
+    <string name="gps_coords">Coords</string>
+
+    <!-- Text displayed on button.Maximum 9 characters and MUST be wrapped by the button image (interjection). -->
+    <string name="label_button">Aidez moi!</string>
+
+    <!-- Title displayed when the alert screen is shown-->
+    <string name="title_activity_alert">ALERTE</string>
+
+    <!-- Title displayed when the contacts screen is shown-->
+    <string name="title_activity_contacts">Contacts</string>
+
+    <!-- String displayed when no contacts chosen -->
+    <string name="no_contacts">Aucun contact</string>
+
+    <string name="bluetooth">Bluetooth</string>
+    <string name="contacts">Contacts</string>
+
+    <string name="add_contact">Ajouter un contact</string>
+
+    <!-- String displayed below each contact -->
+    <string name="hold_to_remove">(maintenir pour enlever)</string>
+
+    <!-- String displayed in toast shown when device does not support bluetooth-->
+    <string name="no_bluetooth">No bluetooth</string>
+
+    <!-- Strings displayed in dialog asking user to enable GPS -->
+    <string name="enable_bluetooth_title">Paramètres GPS</string>
+    <string name="enable_bluetooth_text">GPS n\'est pas activé. Voulez-vous aller dans le menu des paramètres? </string>
+
+    <!-- Strings displayed as subtitle for bluetooth connection status -->
+    <string name="title_connecting">De liaison</string>
+    <string name="title_connected_to">Nonnecté</string>
+    <string name="title_not_connected">Non connecté</string>
+    <string name="not_requested_bluetooth"> </string>
+
+    <!-- Dialog showing when unable to connect -->
+    <string name="title_dialog_unable_to_connect">Impossible de se connecter dispositif. Essayer à nouveau?</string>
+    <string name="reject_dialog">Non</string>
+    <string name="accept_dialog">Oui</string>
+
+    <!-- Dialog showing when bluetooth button pressed -->
+    <string name="title_dialog_scan_again">Numériser à nouveau pour les appareils?</string>
+    <string name="reject_scan_dialog">Non, éteignez</string>
+    <string name="accept_scan_dialog">Oui</string>
+
+    <!-- Strings in dialog when create new contact -->
+    <string name="label_name">Nom</string>
+    <string name="label_phone_number">Numéro de téléphone</string>
+
+    <string name="positive_button">Terminé</string>
+    <string name="negative_button">Annuler</string>
+
+    <!-- String used in toasts to tell SMS sending status -->
+    <string name="sms_sent">SMS envoyés</string>
+    <string name="no_service">Aucun servicee</string>
+    <string name="generic_failure">Panne générique</string>
+    <string name="null_pdu">Null PDU</string>
+    <string name="radio_off">Radio désactivé</string>
+
+    <!-- Abreviations for latitude and longitude.Displayed on the top of the main screen -->
+    <string name="latitude">Lat</string>
+    <string name="longitude">Lng</string>
+
+    <!-- String used in toast showed when bluetooth connection events are triggerd -->
+    <string name="connection_lost">Connexion perduet</string>
+    <string name="connected_to">Connecté à</string>
+
+    <!-- Strings in available devices screen -->
+    <string name="scanning">Recherche </string>
+    <string name="non_paired">Non apparié </string>
+    <string name="select_device">Sélectionnez le périphérique </string>
+    <string name="none_found">Aucun dispositif </string>
+    <string name="title_paired_devices">Les dispositifs liés </string>
+    <string name="title_other_devices">Autres dispositifs </string>
+    <string name="button_scan">Recherche</string>
+</resources>

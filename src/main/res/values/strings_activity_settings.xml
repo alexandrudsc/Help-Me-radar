@@ -1,0 +1,40 @@
+<!-- All this strings will be used in settings screen.They explain briefly
+    the functionality of each feature -->
+
+<resources>
+
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Section in settings referring to general preference -->
+    <string name="pref_header_general">General</string>
+
+    <!-- Section in settings referring to GPS preference-->
+    <string name="pref_title_gps">Access to my location</string>
+    <string name="pref_description_gps">See GPS coordinates</string>
+
+    <!-- Section in settings referring to user name preference-->
+    <string name="pref_title_name">Name</string>
+    <string name="pref_default_name">John Doe</string>
+
+    <!-- Section in settings referring to message template preference  -->
+    <string name="pref_title_message">Message template</string>
+    <string name="pref_default_message">I need help!Please hurry!</string>
+
+    <!-- Section in settings referring to media button preference -->
+    <string name="pref_title_headphones">Use wired button</string>
+    <string name="pref_description_headphones">Send panic messages when wired button is pressed</string>
+
+
+    <!-- Section in settings referring to notifications preference -->
+    <string name="pref_header_notifications">Notifications</string>
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <!-- Section in settings referring to ringtone preference -->
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <!-- Section in settings referring to vibration preference -->
+    <string name="pref_title_vibrate">Vibrate</string>
+</resources>

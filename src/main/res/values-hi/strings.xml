@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!-- hindi -->
+<resources>
+    <!-- The name of tha application -->
+    <string name="app_name">मुझे रडार मदद</string>
+    <!-- Text displayed on settings menu button -->
+    <string name="action_settings">सेटिंग्स</string>
+    <string name="text_btn_type_new_contact">नए संपर्क प्रकार</string>
+
+    <!-- Text when no GPS coordinates are available -->
+    <string name="no_coords">अनुपलब्ध स्थान</string>
+
+    <!-- Label for GPS coordinates -->
+    <string name="gps_coords">Coords</string>
+
+    <!-- Text displayed on button.Maximum 9 characters and MUST be wrapped by the button image (interjection). -->
+    <string name="label_button">मदद!</string>
+
+    <!-- Title displayed when the alert screen is shown-->
+    <string name="title_activity_alert">चेतावनी</string>
+
+    <!-- Title displayed when the contacts screen is shown-->
+    <string name="title_activity_contacts">संपर्क</string>
+
+    <!-- String displayed when no contacts chosen -->
+    <string name="no_contacts">कोई संपर्क नहीं</string>
+
+    <string name="bluetooth">Bluetooth</string>
+    <string name="contacts">Contacts</string>
+
+    <string name="add_contact">संपर्क जोड़ें</string>
+
+    <!-- String displayed below each contact -->
+    <string name="hold_to_remove">(नष्ट करने के लिए पकड़)</string>
+
+    <!-- String displayed in toast shown when device does not support bluetooth-->
+    <string name="no_bluetooth">No bluetooth</string>
+
+    <!-- Strings displayed in dialog asking user to enable GPS -->
+    <string name="enable_bluetooth_title">जीपीएस सेटिंग्स</string>
+    <string name="enable_bluetooth_text">जीपीएस सक्षम नहीं है. आप सेटिंग्स मेनू में जाना चाहते हैं? </string>
+
+    <!-- Strings displayed as subtitle for bluetooth connection status -->
+    <string name="title_connecting">कनेक्ट</string>
+    <string name="title_connected_to">कनेक्टेड</string>
+    <string name="title_not_connected">कनेक्टेड नहीं</string>
+    <string name="not_requested_bluetooth"> </string>
+
+    <!-- Dialog showing when unable to connect -->
+    <string name="title_dialog_unable_to_connect">डिवाइस से कनेक्ट करने में असमर्थ. फिर से कोशिश करें?</string>
+    <string name="reject_dialog">नहीं</string>
+    <string name="accept_dialog">हाँ</string>
+
+    <!-- Dialog showing when bluetooth button pressed -->
+    <string name="title_dialog_scan_again">उपकरणों के लिए फिर से स्कैन?</string>
+    <string name="reject_scan_dialog">नहीं, बंद करें</string>
+    <string name="accept_scan_dialog">हाँ</string>
+
+    <!-- Strings in dialog when create new contact -->
+    <string name="label_name">नाम</string>
+    <string name="label_phone_number">फोन नंबर</string>
+
+    <string name="positive_button">सम्पन्न</string>
+    <string name="negative_button">रद्द</string>
+
+    <!-- String used in toasts to tell SMS sending status -->
+    <string name="sms_sent">एसएमएस भेजा</string>
+    <string name="no_service">कोई सेवा नहीं</string>
+    <string name="generic_failure">जेनेरिक विफलता</string>
+    <string name="null_pdu">Null PDU</string>
+    <string name="radio_off">रेडियो बंद</string>
+
+    <!-- Abreviations for latitude and longitude.Displayed on the top of the main screen -->
+    <string name="latitude">अक्षां</string>
+    <string name="longitude">देशां</string>
+
+    <!-- String used in toast showed when bluetooth connection events are triggerd -->
+    <string name="connection_lost">कनेक्शन खो दिया</string>
+    <string name="connected_to">से जुड़े</string>
+
+    <!-- Strings in available devices screen -->
+    <string name="scanning">सर्च कर रहे हैं </string>
+    <string name="non_paired">गैर बनती </string>
+    <string name="select_device">डिवाइस का चयन करें</string>
+    <string name="none_found">कोई उपकरण नहीं </string>
+    <string name="title_paired_devices">युग्मित उपकरणों </string>
+    <string name="title_other_devices">अन्य उपकरणों </string>
+    <string name="button_scan">खोज</string>
+
+</resources>

@@ -1,0 +1,40 @@
+<!-- All this strings will be used in settings screen.They explain briefly
+    the functionality of each feature -->
+<!-- russian -->
+<resources>
+
+    <string name="title_activity_settings">Настройки</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Section in settings referring to general preference -->
+    <string name="pref_header_general">Oбщее</string>
+
+    <!-- Section in settings referring to GPS preference-->
+    <string name="pref_title_gps">Доступ к моему месту</string>
+    <string name="pref_description_gps">Смотреть координаты GPS</string>
+
+    <!-- Section in settings referring to user name preference-->
+    <string name="pref_title_name">Имя</string>
+    <string name="pref_default_name">John Doe</string>
+
+    <!-- Section in settings referring to message template preference  -->
+    <string name="pref_title_message">шаблон сообщение</string>
+    <string name="pref_default_message">Мне нужна помощь! Пожалуйста, поторопитесь!</string>
+
+    <!-- Section in settings referring to media button preference -->
+    <string name="pref_title_headphones">Используйте кнопку проводной</string>
+    <string name="pref_description_headphones">Отправить сообщения при нажатии кнопки СМИ</string>
+
+
+    <!-- Section in settings referring to notifications preference -->
+    <string name="pref_header_notifications">Уведомления</string>
+    <string name="pref_title_new_message_notifications">Уведомления о новых сообщениях сообщение</string>
+
+    <!-- Section in settings referring to ringtone preference -->
+    <string name="pref_title_ringtone">Мелодия</string>
+    <string name="pref_ringtone_silent">Тихая</string>
+
+    <!-- Section in settings referring to vibration preference -->
+    <string name="pref_title_vibrate">Вибрация</string>
+</resources>

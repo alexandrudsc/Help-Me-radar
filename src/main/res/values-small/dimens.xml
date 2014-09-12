@@ -1,0 +1,16 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines.Small size -->
+    <dimen name="activity_horizontal_margin">6dp</dimen>
+    <dimen name="activity_vertical_margin">14dp</dimen>
+
+    <dimen name="gps_coord_size">16sp</dimen>
+    <dimen name="small_text">12sp</dimen>
+    <dimen name="alert_text_size">20sp</dimen>
+    <dimen name="medium_text">14sp</dimen>
+
+    <dimen name="btn_text_size">34sp</dimen>
+
+    <dimen name="radar_width">65dp</dimen>
+
+    <dimen name="btn_dimen">170dp</dimen>
+</resources>

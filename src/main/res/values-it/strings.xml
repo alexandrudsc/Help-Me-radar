@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!-- Italian -->
+<resources>
+    <!-- The name of tha application -->
+    <string name="app_name">Aiutami radar</string>
+    <!-- Text displayed on settings menu button -->
+    <string name="action_settings">Impostazioni</string>
+    <string name="text_btn_type_new_contact">Inserisci un nuovo contatto</string>
+
+    <!-- Text when no GPS coordinates are available -->
+    <string name="no_coords">Posizione non disponibile</string>
+
+    <!-- Label for GPS coordinates -->
+    <string name="gps_coords">Coords</string>
+
+    <!-- Text displayed on button.Maximum 9 characters and MUST be wrapped by the button image (interjection). -->
+    <string name="label_button">Aiutami!</string>
+
+    <!-- Title displayed when the alert screen is shown-->
+    <string name="title_activity_alert">ALERT</string>
+
+    <!-- Title displayed when the contacts screen is shown-->
+    <string name="title_activity_contacts">Contatti</string>
+
+    <!-- String displayed when no contacts chosen -->
+    <string name="no_contacts">Nessun contatto</string>
+
+    <string name="bluetooth">Bluetooth</string>
+    <string name="contacts">Contatti</string>
+
+    <string name="add_contact">Aggiungi contatto</string>
+
+    <!-- String displayed below each contact -->
+    <string name="hold_to_remove">(tenere premuto per rimuovere)</string>
+
+    <!-- String displayed in toast shown when device does not support bluetooth-->
+    <string name="no_bluetooth">No bluetooth</string>
+
+    <!-- Strings displayed in dialog asking user to enable GPS -->
+    <string name="enable_bluetooth_title">Impostazioni GPS</string>
+    <string name="enable_bluetooth_text">GPS non è abilitato. Vuoi andare al menu delle impostazioni? </string>
+
+    <!-- Strings displayed as subtitle for bluetooth connection status -->
+    <string name="title_connecting">Collegamento</string>
+    <string name="title_connected_to">Collegato</string>
+    <string name="title_not_connected">Non collegato</string>
+    <string name="not_requested_bluetooth"> </string>
+
+    <!-- Dialog showing when unable to connect -->
+    <string name="title_dialog_unable_to_connect">Impossibile collegare il dispositivo. Riprova?</string>
+    <string name="reject_dialog">No</string>
+    <string name="accept_dialog">Sì</string>
+
+    <!-- Dialog showing when bluetooth button pressed -->
+    <string name="title_dialog_scan_again">Scan again for devices?</string>
+    <string name="reject_scan_dialog">No, turn off</string>
+    <string name="accept_scan_dialog">Yes</string>
+
+    <!-- Strings in dialog when create new contact -->
+    <string name="label_name">Nome</string>
+    <string name="label_phone_number">Numero di telefono</string>
+
+    <string name="positive_button">Fatto</string>
+    <string name="negative_button">Annullare</string>
+
+    <!-- String used in toasts to tell SMS sending status -->
+    <string name="sms_sent">SMS inviato</string>
+    <string name="no_service">Nessun servizio</string>
+    <string name="generic_failure">Errore generico</string>
+    <string name="null_pdu">Null PDU</string>
+    <string name="radio_off">Radio spento</string>
+
+    <!-- Abreviations for latitude and longitude.Displayed on the top of the main screen -->
+    <string name="latitude">Lat</string>
+    <string name="longitude">Lng</string>
+
+    <!-- String used in toast showed when bluetooth connection events are triggerd -->
+    <string name="connection_lost">Connessione persa</string>
+    <string name="connected_to">Collegato a</string>
+
+    <!-- Strings in available devices screen -->
+    <string name="scanning">Ricerca </string>
+    <string name="non_paired">Non associati</string>
+    <string name="select_device">Selezionare il dispositivo </string>
+    <string name="none_found">Nessun dispositivo</string>
+    <string name="title_paired_devices">dispositivi associati</string>
+    <string name="title_other_devices">Altri dispositivi </string>
+    <string name="button_scan">Ricerca</string>
+</resources>
