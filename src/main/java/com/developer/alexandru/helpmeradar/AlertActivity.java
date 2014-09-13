@@ -1,7 +1,5 @@
 package com.developer.alexandru.helpmeradar;
 
-import com.developer.alexandru.helpmeradar.util.SystemUiHider;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -13,9 +11,7 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.PowerManager;
 import android.os.Vibrator;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
