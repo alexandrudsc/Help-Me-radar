@@ -64,10 +64,7 @@ public class MainActivity extends Activity {
     private AlertDialog.Builder builder;
 
     private Intent serviceContainingBluetoothListenerIntent;
-    private IntentFilter intentFilterForAlerts;
     private IntentFilter intentFilterBluetoothState;
-
-    private ReceiverInternalBroadcast receiverInternalBroadcast;
 
     private View bluetoothButton;
     private View settingsButton;
@@ -83,7 +80,7 @@ public class MainActivity extends Activity {
         //checkAndOpenGPS();
         gpsTracker = new GPSTracker(this);
 
-        //Click listener for the main button.Send SMS and bluetooth message (if posiible)
+        //Click listener for the main button.Send SMS and bluetooth message (if possible)
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -213,13 +210,13 @@ public class MainActivity extends Activity {
                         ensureDiscoverable();
                     if(prefs == null)
                         prefs = getSharedPreferences(SettingsActivity.PREF_FILE, MODE_PRIVATE);
-                    prefs.edit().putBoolean(SettingsActivity.PREF_NAME_ALLOW_BT, true).commit();
+                    prefs.edit().putBoolean(SettingsActivity.PREF_NAME_ALLOW_BT, true).apply();
                 }else {
                 // Bluetooth was not turned on
                     setStatus(R.string.not_requested_bluetooth);
                     if (prefs == null)
                         prefs = getSharedPreferences(SettingsActivity.PREF_FILE, MODE_PRIVATE);
-                    prefs.edit().putBoolean(SettingsActivity.PREF_NAME_ALLOW_BT, false).commit();
+                    prefs.edit().putBoolean(SettingsActivity.PREF_NAME_ALLOW_BT, false).apply();
                 }
                 break;
 
@@ -233,7 +230,7 @@ public class MainActivity extends Activity {
                     if(adapter != null) {
                         if (prefs == null)
                             prefs = getSharedPreferences(SettingsActivity.PREF_FILE, MODE_PRIVATE);
-                        prefs.edit().putBoolean(SettingsActivity.PREF_NAME_ALLOW_BT, true).commit();
+                        prefs.edit().putBoolean(SettingsActivity.PREF_NAME_ALLOW_BT, true).apply();
 
                         //adapter.startDiscovery();
                         // Launch the DeviceListActivity to see devices and do scan
@@ -475,7 +472,7 @@ public class MainActivity extends Activity {
             if(prefs == null)
                 prefs = getSharedPreferences(SettingsActivity.PREF_FILE, MODE_PRIVATE);
             prefs.edit().putBoolean(
-                    SettingsActivity.PREF_NAME_ALLOW_BT, true).commit();
+                    SettingsActivity.PREF_NAME_ALLOW_BT, true).apply();
 
             //adapter.cancelDiscovery();
             //adapter.startDiscovery();
@@ -647,7 +644,7 @@ public class MainActivity extends Activity {
                     }
                     break;
                 case MESSAGE_WRITE:
-                    byte[] writeBuf = (byte[]) msg.obj;
+                    //byte[] writeBuf = (byte[]) msg.obj;
                     // construct a string from the buffer
                     //String writeMessage = new String(writeBuf);
                     //mConversationArrayAdapter.add("Me:  " + writeMessage);
