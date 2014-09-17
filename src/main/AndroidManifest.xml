@@ -89,6 +89,16 @@
 
         <service android:name=".ServiceListenerHeadphones" />
 
+        <receiver
+            android:name=".HeadphonesActionReceiver"
+            android:enabled="true">
+            <intent-filter
+                android:priority="2147483647">
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+                <action android:name="android.media.AUDIO_BECOMING_NOISY" />
+            </intent-filter>
+        </receiver>
+
         <activity
             android:name=".ContactsActivity"
             android:label="@string/title_activity_contacts"
@@ -99,8 +109,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.developer.alexandru.helpmeradar.MainActivity" />
         </activity>
-
-        <service android:name=".ServiceContainingBluetoothListener"/>
 
     </application>
 

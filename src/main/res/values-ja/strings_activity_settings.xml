@@ -23,8 +23,8 @@
     <string name="pref_default_message">私は助けが必要！お急ぎください！</string>
 
     <!-- Section in settings referring to media button preference -->
-    <string name="pref_title_headphones">利用有線ボタン</string>
-    <string name="pref_description_headphones">メディアボタンが押されたときにメッセージを送信</string>
+    <string name="pref_title_headphones">使用メディアボタン（有料版）</string>
+    <string name="pref_description_headphones">メディアボタンでメッセージを送信します。これが最後のメディアアプリが開かれている必要があります。</string>
 
 
     <!-- Section in settings referring to notifications preference -->

@@ -1,6 +1,6 @@
 <!-- All this strings will be used in settings screen.They explain briefly
     the functionality of each feature -->
-
+<!-- chineese traditional -->
 <resources>
 
     <string name="title_activity_settings">设置</string>
@@ -23,8 +23,8 @@
     <string name="pref_default_message">我需要帮助！请赶快行动吧！</string>
 
     <!-- Section in settings referring to media button preference -->
-    <string name="pref_title_headphones">使用有线按钮</string>
-    <string name="pref_description_headphones">发送邮件时按下媒体按钮</string>
+    <string name="pref_title_headphones">使用媒體按鈕（付費版） </string>
+    <string name="pref_description_headphones">发送与媒体按钮的消息。这必须是最后的媒体应用程序打开。</string>
 
 
     <!-- Section in settings referring to notifications preference -->

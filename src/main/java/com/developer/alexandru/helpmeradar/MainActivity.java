@@ -6,11 +6,13 @@ import android.app.Dialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
@@ -29,6 +31,7 @@ public class MainActivity extends Activity {
 
     private static final int DISCOVERABLE_TIME = 700;
 
+    //Codes for startActivityForResult()
     private final static int REQUEST_CODE_CHANGE_SETTINGS = 1235;
     private final static int REQUEST_TURN_ON_BLUETOOTH = 1236;
     private final static int REQUEST_DISCOVERABILITY = 1237;
@@ -51,6 +54,7 @@ public class MainActivity extends Activity {
     // Name of the connected device
     private String mConnectedDeviceName = null;
 
+    //GPS helper
     private GPSTracker gpsTracker;
 
     private BluetoothService bluetoothService;
@@ -58,14 +62,20 @@ public class MainActivity extends Activity {
     private BluetoothDevice bluetoothDevice;
     private final static boolean SECURE_CONNECTION = true;
 
+    //Receiver for MEDIA_BUTTON
+    private ComponentName eventComponent;
+    private AudioManager audioManager;
+
     private  Context mContext;
     private SharedPreferences prefs;
 
+    //Dialog builder for alerts
     private AlertDialog.Builder builder;
 
     private Intent serviceContainingBluetoothListenerIntent;
     private IntentFilter intentFilterBluetoothState;
 
+    //Buttons that can be moved around
     private View bluetoothButton;
     private View settingsButton;
     private View peopleButton;
@@ -143,27 +153,6 @@ public class MainActivity extends Activity {
     }
 
     @Override
-    protected void onPostCreate(Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        //SharedPreferences prefs =  getSharedPreferences(SettingsActivity.PREF_FILE, MODE_PRIVATE);
-        /*if(gpsTracker != null && gpsTracker.canGetLocation) {
-            if(prefs.getBoolean(SettingsActivity.PREF_NAME_ALLOW_GPS, true))
-                ((TextView) findViewById(R.id.label_gps_coords)).setText(getResources().getString(R.string.latitude) + " " +
-                        gpsTracker.getLatitude() + " " + getResources().getString(R.string.longitude) + " " + gpsTracker.getLongitude());
-            prefs.edit().putString(
-                    SettingsActivity.PREF_NAME_LAST_GPS_COORDS, gpsTracker.getLatitude() +
-                            " " + gpsTracker.getLongitude()).commit();
-        }*/
-    }
-
-    /*@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }*/
-
-    @Override
     public void onResume() {
         super.onResume();
         //Keep location as fresh as possible
@@ -172,22 +161,6 @@ public class MainActivity extends Activity {
         //If a menu button was moved, restore natural position
         restoreMenuButtons();
 
-        /*//Bluetooth service stopped no background service needed
-        if(serviceContainingBluetoothListenerIntent == null)
-            serviceContainingBluetoothListenerIntent = new Intent(this, ServiceContainingBluetoothListener.class);
-        stopService(serviceContainingBluetoothListenerIntent);
-
-        //Register receiver for alerts since the service is stopped
-        if(receiverInternalBroadcast == null)
-            receiverInternalBroadcast = new ReceiverInternalBroadcast();
-        if(intentFilterForAlerts == null)
-            intentFilterForAlerts = new IntentFilter(ReceiverInternalBroadcast.ACTION_ALERT);
-        try {
-            unregisterReceiver(receiverInternalBroadcast);
-        }catch (Exception e){
-        }
-        registerReceiver(receiverInternalBroadcast, intentFilterForAlerts);
-        */
     }
 
     @Override
@@ -258,18 +231,6 @@ public class MainActivity extends Activity {
     @Override
     public synchronized void onPause() {
         super.onPause();
-        /*//Start service listening for handler broadcasts (sent to start alerts)
-        if(bluetoothService != null && bluetoothService.getState() == BluetoothService.STATE_CONNECTED) {
-            if (serviceContainingBluetoothListenerIntent == null)
-                serviceContainingBluetoothListenerIntent = new Intent(this, ServiceContainingBluetoothListener.class);
-            startService(serviceContainingBluetoothListenerIntent);
-        }
-
-        //Unregister receiver for alerts since the service is started
-        try{
-            unregisterReceiver(receiverInternalBroadcast);
-        }catch ( Exception e){
-        }*/
     }
 
     //Stop service as soon as requested.
@@ -295,26 +256,13 @@ public class MainActivity extends Activity {
             adapter.cancelDiscovery();
 
         //Stop GPS service for preserving battery life
-        gpsTracker.stopUsingGPS();//new Thread(new KillGPS()).start();
-
-        //Service keeping bluetooth alive stopped.No background service needed
-        if(serviceContainingBluetoothListenerIntent == null)
-            serviceContainingBluetoothListenerIntent = new Intent(this, BluetoothListenerService.class);
-        stopService(serviceContainingBluetoothListenerIntent);
-
+        gpsTracker.stopUsingGPS();
 
         //No need for bluetooth status broadcast receiver
         try {
             unregisterReceiver(receiverBluetoothStatus);
         } catch (Exception e){
         }
-
-        /*//No need for broadcast receivers listening to discovery processes
-        try {
-            unregisterReceiver(receiver);
-        } catch (Exception e){
-
-        }*/
 
         //No need for sending SMS status
         try {
@@ -433,20 +381,6 @@ public class MainActivity extends Activity {
 
     //Broadcast receiver for bluetooth status
     private void registerBluetoothReceiver(){
-        /*//Careful not to register same receiver for scanning results twice
-        try{
-            unregisterReceiver(receiver);
-        }catch (Exception e){
-        }*/
-
-
-        /*//Receiver for scanning results
-        IntentFilter deviceFound = new IntentFilter(BluetoothDevice.ACTION_FOUND);
-        this.registerReceiver(receiver, deviceFound);
-        IntentFilter scanFinished = new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED);
-
-        this.registerReceiver(receiver, scanFinished);
-        */
 
         //Receiver for bluetooth state: ON or OFF
         //Careful not to register twice
@@ -487,21 +421,6 @@ public class MainActivity extends Activity {
         textView.setText(resId);
     }
 
-    /*private void checkAndOpenGPS(){
-        if(getSharedPreferences(SettingsActivity.PREF_FILE, MODE_PRIVATE).getBoolean(
-                SettingsActivity.PREF_NAME_ALLOW_GPS, true)) {
-            if (checkGPS != null) {
-                if (checkGPS.isAlive())
-                    checkGPS.interrupt();
-                checkGPS = null;
-
-            }
-
-            checkGPS = new Thread(new CheckGPS(this));
-            checkGPS.start();
-        }
-    }*/
-
     private void updateLocation(){
         if(gpsTracker == null)
             gpsTracker = new GPSTracker(this);
@@ -523,77 +442,6 @@ public class MainActivity extends Activity {
         registerReceiver(smsResultReceiver, intentFilter);
     }
 
-
-    /*private class CheckGPS implements Runnable {
-        String lng = null, lat = null;
-
-        private MainActivity activity;
-
-        public CheckGPS(MainActivity activity){
-            this.activity = activity;
-
-            if(startServiceGps == null)
-                startServiceGps = new Intent(activity, GPSTracker.class);
-            stopService(startServiceGps);
-            startService(startServiceGps);
-        }
-
-        @Override
-        public void run() {
-            Looper.prepare();
-
-
-            if(gpsTracker == null)
-                gpsTracker = new GPSTracker(this.activity);
-            gpsTracker.getLocation();
-            final SharedPreferences prefs = getSharedPreferences(SettingsActivity.PREF_FILE, MODE_PRIVATE);
-
-            if(gpsTracker.canGetLocation){
-                //GPS enabled
-                lat = Double.toString( gpsTracker.getLatitude() );
-                lng = Double.toString( gpsTracker.getLongitude());
-            }//else
-                //prefs.edit().putBoolean(SettingsActivity.PREF_NAME_ALLOW_GPS, false).commit();
-
-            runOnUiThread(new Runnable() {
-
-                @Override
-                public void run() {
-                    TextView gpsCoords = (TextView) findViewById(R.id.label_gps_coords);
-
-                    if (lat != null && lng != null) {
-                        if (prefs.getBoolean(SettingsActivity.PREF_NAME_ALLOW_GPS, true))
-                            gpsCoords.setText(getResources().getString(R.string.latitude) + " " + lat +
-                                    " " + getResources().getString(R.string.longitude) + " " + lng);
-                        prefs.edit().putString(SettingsActivity.PREF_NAME_LAST_GPS_COORDS, lat + " " + lng).commit();
-                    } else {
-                        //GPS not enabled
-                        //Ask user to enable
-                        gpsTracker.showSettingsAlert();
-
-                    }
-                }
-            });
-
-        }
-    }
-
-    private class KillGPS implements Runnable{
-
-        @Override
-        public void run() {
-            Looper.prepare();
-            if(startServiceGps == null)
-                startServiceGps = new Intent(getApplicationContext(), GPSTracker.class);
-
-            stopService(startServiceGps);
-
-            if(gpsTracker != null)
-                gpsTracker.stopUsingGPS();
-        }
-    }*/
-
-
     //Service containing media button broadcast receiver will run until user explicitly kills
     private void registerHeadsetReceiver() {
 
@@ -601,10 +449,18 @@ public class MainActivity extends Activity {
         // to dynamically registered receivers
         if(prefs == null)
             prefs = getSharedPreferences(SettingsActivity.PREF_FILE, MODE_PRIVATE);
-        if(prefs.getBoolean(SettingsActivity.HEADSET_LISTENER_PREF, false))
-            new Thread(new StartHeadphoneListenerService(this)).start();
+        serviceListenerMediaButton(prefs.getBoolean(SettingsActivity.HEADSET_LISTENER_PREF, false));
     }
 
+    private void serviceListenerMediaButton(boolean isNeeded){
+
+        Intent serviceIntent = new Intent(this, ServiceListenerHeadphones.class);
+        stopService(serviceIntent);
+        if(isNeeded)
+            startService(serviceIntent);
+
+    }
+/*
     private class StartHeadphoneListenerService implements Runnable{
 
         private Context context;
@@ -622,7 +478,7 @@ public class MainActivity extends Activity {
                 startService(serviceIntent);
         }
     }
-
+*/
     // The Handler that gets information back from the BluetoothChatService
     private final Handler mHandler = new Handler() {
         @Override
@@ -752,22 +608,6 @@ public class MainActivity extends Activity {
             }
         }
     };
-
-    /*//Receiver for bluetooth scanning
-    private final BroadcastReceiver receiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-
-            if(intent.getAction().equals(BluetoothDevice.ACTION_FOUND)){
-                adapter.cancelDiscovery();
-
-                bluetoothDevice = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-
-                bluetoothService.connect(bluetoothDevice, SECURE_CONNECTION);
-
-            }
-        }
-    };*/
 
     private final BroadcastReceiver smsResultReceiver = new BroadcastReceiver() {
 

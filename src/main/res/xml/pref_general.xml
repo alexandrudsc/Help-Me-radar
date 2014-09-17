@@ -8,6 +8,7 @@
 
     <CheckBoxPreference
         android:key="headphones_checkbox"
+        android:enabled="false"
         android:title="@string/pref_title_headphones"
         android:summary="@string/pref_description_headphones"
         android:defaultValue="false" />

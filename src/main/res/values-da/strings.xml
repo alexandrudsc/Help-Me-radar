@@ -41,11 +41,9 @@
     <string name="enable_bluetooth_text">GPS er ikke aktiveret. Ønsker du at gå til indstillingsmenuen? </string>
 
     <!-- Strings displayed as subtitle for bluetooth connection status -->
-    <string name="title_device_found">Enhed fundet</string>
     <string name="title_connecting">Tilslutning</string>
     <string name="title_connected_to">Forbundet</string>
     <string name="title_not_connected">Ikke tilsluttet</string>
-    <string name="title_searching_bluetooth">Søgning</string>
     <string name="title__state_idle">Idle</string>
     <string name="not_requested_bluetooth"> </string>
 

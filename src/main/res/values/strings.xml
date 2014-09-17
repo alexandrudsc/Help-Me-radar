@@ -76,8 +76,6 @@
     <!-- String used in toast showed when bluetooth connection events are triggerd -->
     <string name="connection_lost">Device connection was lost</string>
     <string name="connected_to">Connected to</string>
-    <string name="bluetooth_invisible">Invisible</string>
-    <string name="bluetooth_visible">Visible</string>
 
     <!-- Strings in available devices screen -->
     <string name="scanning">Scanning</string>

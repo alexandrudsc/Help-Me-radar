@@ -41,7 +41,6 @@
     <string name="enable_bluetooth_text">全球定位系統未啟用。你想進入設置菜單？ </string>
 
     <!-- Strings displayed as subtitle for bluetooth connection status -->
-    <string name="title_device_found">設備發現</string>
     <string name="title_connecting">連接</string>
     <string name="title_connected_to">連接</string>
     <string name="title_not_connected">沒有連接</string>
