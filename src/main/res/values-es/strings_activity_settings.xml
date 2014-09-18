@@ -22,7 +22,7 @@
     <string name="pref_default_message">¡Necesito ayuda! Por favor, date prisa!</string>
 
     <!-- Section in settings referring to media button preference -->
-    <string name="pref_title_headphones">Utilice el botón de medios (versión de pago) </string>
+    <string name="pref_title_headphones">Utilice el botón de medios </string>
     <string name="pref_description_headphones">Enviar mensajes con botón multimedia. Esta debe ser la última aplicación
                                                 de los medios de comunicación se abrió.</string>
 

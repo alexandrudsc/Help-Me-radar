@@ -25,9 +25,9 @@ android {
         }
     }
     productFlavors {
-        demo{
+        full {
             applicationId "com.developer.alexandru.helpmeradar"
-            versionName "1.0 - demo"
+            versionName "1.0 - pro"
         }
     }
 }
@@ -38,5 +38,7 @@ dependencies {
     // You must install or update the Support Repository through the SDK manager to use this dependency.
     // compile 'com.android.support:appcompat-v7:20.+'
     // You must install or update the Support Repository through the SDK manager to use this dependency.
+    // You must install or update the Support Repository through the SDK manager to use this dependency.
     compile 'com.android.support:support-v4:20.+'
+    compile 'com.android.support:appcompat-v7:19.+'
 }

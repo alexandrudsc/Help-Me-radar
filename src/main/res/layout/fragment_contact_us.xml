@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/activity_vertical_margin">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:background="@drawable/selectable_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="openFacebook">
+
+        <ImageView
+            android:scaleType="fitCenter"
+            android:src="@drawable/fb"
+            android:layout_width="72dp"
+            android:layout_height="72dp" />
+
+        <TextView
+            android:text="Help Me Radar"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:textSize="32sp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="12dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selectable_background"
+        android:onClick="openTwitter">
+
+        <ImageView
+            android:scaleType="fitCenter"
+            android:src="@drawable/tw"
+            android:layout_width="72dp"
+            android:layout_height="72dp" />
+
+        <TextView
+            android:text="Help Me Radar"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:textSize="32sp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="12dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selectable_background"
+        android:onClick="openEmail">
+
+        <ImageView
+            android:scaleType="fitCenter"
+            android:src="@drawable/mail"
+            android:layout_width="72dp"
+            android:layout_height="72dp" />
+
+        <TextView
+            android:text="mail@helpmeradar.com"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

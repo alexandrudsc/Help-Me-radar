@@ -66,6 +66,9 @@ public class MainActivity extends Activity {
     private ComponentName eventComponent;
     private AudioManager audioManager;
 
+    //Intent to start the service containing MEDIA_BUTTON receiver
+    private Intent serviceHeadsetIntent;
+
     private  Context mContext;
     private SharedPreferences prefs;
 
@@ -114,10 +117,6 @@ public class MainActivity extends Activity {
             }
         });
 
-
-        //Check if service with receiver for MediaButton is needed
-        registerHeadsetReceiver();
-
         //Receiver watching for bluetooth adapter status
         registerBluetoothReceiver();
 
@@ -128,14 +127,38 @@ public class MainActivity extends Activity {
 
         //Touch listener for menu buttons.Start drag when touch
         View.OnTouchListener touchListener = new DragListener.TouchEvent();
+        View.OnLongClickListener longClickListener = new DragListener.LongClickListener();
+        View.OnClickListener clickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (v.getId()){
+                    case R.id.bluetooth:
+                        menuBluetoothPinned();
+                        break;
+                    case R.id.settings:
+                        menuSettingsPinned();
+                        break;
+                    case R.id.people:
+                        menuPeoplePinned();
+                        break;
+                }
+            }
+        };
 
         bluetoothButton = findViewById(R.id.bluetooth);
-        bluetoothButton.setOnTouchListener(touchListener);
-        settingsButton = findViewById(R.id.settings);
-        settingsButton.setOnTouchListener(touchListener);
-        peopleButton = findViewById(R.id.people);
-        peopleButton.setOnTouchListener(touchListener);
+        //bluetoothButton.setOnTouchListener(touchListener);
+        bluetoothButton.setOnLongClickListener(longClickListener);
+        bluetoothButton.setOnClickListener(clickListener);
 
+        settingsButton = findViewById(R.id.settings);
+        //settingsButton.setOnTouchListener(touchListener);
+        settingsButton.setOnClickListener(clickListener);
+        settingsButton.setOnLongClickListener(longClickListener);
+
+        peopleButton = findViewById(R.id.people);
+        //peopleButton.setOnTouchListener(touchListener);
+        peopleButton.setOnLongClickListener(longClickListener);
+        peopleButton.setOnClickListener(clickListener);
         /*Bluetooth class to configurate this device as "server" (thread listening to connections)
         * and to connect if case.
         */
@@ -158,6 +181,9 @@ public class MainActivity extends Activity {
         //Keep location as fresh as possible
         updateLocation();
 
+        //Check if service with receiver for MediaButton is needed
+        registerHeadsetReceiver();
+
         //If a menu button was moved, restore natural position
         restoreMenuButtons();
 
@@ -168,8 +194,7 @@ public class MainActivity extends Activity {
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode){
             case REQUEST_CODE_CHANGE_SETTINGS:
-                //If a service for media button actions is requested, start one
-                registerHeadsetReceiver();
+
                 //checkAndOpenGPS();
                 //ifLocationAccepted(getSharedPreferences(SettingsActivity.PREF_FILE, MODE_PRIVATE));
                 break;
@@ -300,6 +325,7 @@ public class MainActivity extends Activity {
         destination.setBackgroundColor(getResources().getColor(android.R.color.transparent));
     }
 
+    //Event when bluetooth button is pinned or pressed
     public void menuBluetoothPinned(){
         Intent intent;
         //Get bluetooth adapter
@@ -454,10 +480,11 @@ public class MainActivity extends Activity {
 
     private void serviceListenerMediaButton(boolean isNeeded){
 
-        Intent serviceIntent = new Intent(this, ServiceListenerHeadphones.class);
-        stopService(serviceIntent);
+        if(serviceHeadsetIntent == null)
+            serviceHeadsetIntent = new Intent(this, ServiceListenerHeadphones.class);
+        stopService(serviceHeadsetIntent);
         if(isNeeded)
-            startService(serviceIntent);
+            startService(serviceHeadsetIntent);
 
     }
 /*

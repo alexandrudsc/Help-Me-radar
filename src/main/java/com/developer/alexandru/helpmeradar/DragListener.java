@@ -116,16 +116,19 @@ public class DragListener implements View.OnDragListener {
     public static class TouchEvent implements View.OnTouchListener{
         @Override
         public boolean onTouch(View view, MotionEvent event) {
-            if(event.getAction() == MotionEvent.ACTION_DOWN){
-                ClipData data = new ClipData(new ClipDescription(String.valueOf(view.getId()), new String[1]),
-                        new ClipData.Item("item"));
-                //DragListener.draggedViewId = view.getId();
-                View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
-                view.startDrag(data, shadowBuilder, view, 0);
-                view.setBackgroundResource(R.drawable.empty_dest);
-                return true;
+            switch (event.getAction()){
+                case MotionEvent.ACTION_DOWN:
+                    ClipData data = new ClipData(new ClipDescription(String.valueOf(view.getId()), new String[1]),
+                            new ClipData.Item("item"));
+                    //DragListener.draggedViewId = view.getId();
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
+                    view.startDrag(data, shadowBuilder, view, 0);
+                    view.setBackgroundResource(R.drawable.empty_dest);
+                    return true;
+                case MotionEvent.ACTION_UP:
+                    Log.d(TAG, "UP");
+                    return true;
             }
-
             return false;
         }
     }

@@ -62,7 +62,7 @@ public class ServiceListenerHeadphones extends Service {
             ;
         }
         try {
-            //((AudioManager) getSystemService(AUDIO_SERVICE)).unregisterMediaButtonEventReceiver(eventReceiver);
+            ((AudioManager) getSystemService(AUDIO_SERVICE)).unregisterMediaButtonEventReceiver(eventReceiver);
         }catch (Exception e){
         }
 

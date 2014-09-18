@@ -5,7 +5,7 @@
     android:layout_margin="@dimen/activity_horizontal_margin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/selectable_background_alexandru"
+    android:background="@drawable/selectable_background"
     android:id="@+id/contact_layout">
 
     <TextView android:id="@+id/name"
