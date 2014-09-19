@@ -11,7 +11,6 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.provider.ContactsContract;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,6 +27,8 @@ public class ContactsActivity extends ListActivity {
     public static final String CONTACTS_PREF_FILE = "contacts";
     private static final int PICK_CONTACT = 12345;
     public static final String SPLITTER = "splitterNameNumber";
+
+    public static final String TAG = "CONTACTS";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,15 +69,18 @@ public class ContactsActivity extends ListActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == PICK_CONTACT && resultCode == RESULT_OK){
+            //Uri to the selected contact
             Uri contact = data.getData();
             ContentResolver contentResolver = getContentResolver();
             Cursor c = managedQuery(contact, null, null, null, null);
 
             while(c.moveToNext()){
+                // Id and name for the selected contact
                 String id = c.getString(c.getColumnIndex(ContactsContract.Contacts._ID));
-
                 String name = c.getString(c.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
+
                 if (Integer.parseInt(c.getString(c.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER))) > 0) {
+                    // Get phone number
                     Cursor pCur = contentResolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
                             null,
                             ContactsContract.CommonDataKinds.Phone.CONTACT_ID +" = ?",
@@ -87,10 +91,35 @@ public class ContactsActivity extends ListActivity {
                         String phoneNumber = pCur.getString(pCur.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
                         getSharedPreferences(CONTACTS_PREF_FILE, MODE_PRIVATE).edit().putString("contact_" + getListAdapter().getCount(),
                                 name + SPLITTER + phoneNumber).commit();
+
                         ((MyListViewAdapter)getListAdapter()).notifyDataSetChanged();
                         break;
                     }
                 }
+
+                // get email and type
+                Cursor emailCur = contentResolver.query(ContactsContract.CommonDataKinds.Email.CONTENT_URI,
+                        null,
+                        ContactsContract.CommonDataKinds.Email.CONTACT_ID + " = ?",
+                        new String[]{id},
+                        null);
+
+                // Add emails to the contacts list
+                while (emailCur.moveToNext()) {
+                    // This would allow you get several email addresses
+                    // if the email addresses were stored in an array
+                    String email = emailCur.getString(
+                            emailCur.getColumnIndex(ContactsContract.CommonDataKinds.Email.DATA));
+                    String emailType = emailCur.getString(
+                            emailCur.getColumnIndex(ContactsContract.CommonDataKinds.Email.TYPE));
+
+                    getSharedPreferences(CONTACTS_PREF_FILE, MODE_PRIVATE).edit().putString("contact_" + getListAdapter().getCount(),
+                            name + SPLITTER + email).commit();
+
+                    ((MyListViewAdapter)getListAdapter()).notifyDataSetChanged();
+                    break;
+                }
+                emailCur.close();
             }
         }
     }
@@ -182,10 +211,10 @@ public class ContactsActivity extends ListActivity {
             Contact contact = contacts.get(position);
 
             TextView name = (TextView)convertView.findViewById(R.id.name);
-            TextView phoneNumber = (TextView)convertView.findViewById(R.id.phone_number);
+            TextView address = (TextView)convertView.findViewById(R.id.address);
 
             name.setText(contact.name);
-            phoneNumber.setText(contact.phoneNumber);
+            address.setText(contact.address);
 
             final int positionInAdapter = position;
 
@@ -206,7 +235,7 @@ public class ContactsActivity extends ListActivity {
 
     public static class Contact{
         public String name;
-        public String phoneNumber;
+        public String address;
     }
 
 }

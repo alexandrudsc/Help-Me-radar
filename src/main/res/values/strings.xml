@@ -110,7 +110,7 @@
     <string name="features_sms_button">Press the button to send messages</string>
 
     <!-- Customize tab content -->
-    <string name="customize_personalization">PERSONALIZATION</string>
+    <string name="customize_title1">PERSONALIZE</string>
     <string name="customize_send_suggestions">Send your suggestions</string>
     <string name="customize_activate_media_btn">Activate the media button</string>
     <string name="customize_paid_version">Try the paid version of the app</string>
@@ -118,6 +118,6 @@
     <string name="customize_ringtone">Choose an alarm ringtone</string>
     <string name="customize_template">Create a message template</string>
     <string name="customize_signature">Sign all your messages</string>
-    <string name="customize_title1">PERSONALIZE</string>
+
 
 </resources>

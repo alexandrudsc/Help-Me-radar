@@ -86,4 +86,39 @@
     <string name="title_paired_devices">Les dispositifs liés </string>
     <string name="title_other_devices">Autres dispositifs </string>
     <string name="button_scan">Recherche</string>
+
+    <!-- Option name in menu on settings screen -->
+    <string name="action_explore">Explorer </string>
+
+    <!-- Words displayed in guide screen -->
+    <string name="title_activity_guide">Guide</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <!-- Tab title in guide screen -->
+    <string name="tab_title_features">Traits </string>
+    <string name="tab_title_customize">Personnaliser</string>
+    <string name="tab_title_contact">Contactez </string>
+
+    <!-- Features tab content  -->
+    <string name="features_title1">Clic long et déménagement</string>
+    <string name="features_subtitle_title1">ou simple clic </string>
+
+    <string name="features_connect_blue">Connectez-vous via bluetooth </string>
+    <string name="features_settings">Paramètres </string>
+    <string name="features_people">Choisissez personnes </string>
+    <string name="features_title2">Envoyer des SMS </string>
+    <string name="features_sms_headphones">Utilisez le bouton des écouteurs pour envoyer des messages</string>
+    <string name="features_sms_button">Appuyez sur le bouton pour envoyer des messages </string>
+
+    <!-- Customize tab content -->
+    <string name="customize_title1">PERSONNALISEZ </string>
+    <string name="customize_send_suggestions">Envoyez vos suggestions</string>
+    <string name="customize_activate_media_btn">Activer médias bouton</string>
+    <string name="customize_paid_version">Essayez la version payante de l\'application </string>
+    <string name="customize_title2">AMÉLIORATION</string>
+    <string name="customize_ringtone">Choisissez une sonnerie </string>
+    <string name="customize_template">Créer un modèle de message</string>
+    <string name="customize_signature">Inscrivez tous vos messages</string>
 </resources>

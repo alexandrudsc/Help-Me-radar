@@ -87,4 +87,39 @@
     <string name="title_other_devices">その他のデバイス </string>
     <string name="button_scan">検索</string>
 
+    <!-- Option name in menu on settings screen -->
+    <string name="action_explore">探検する</string>
+
+    <!-- Words displayed in guide screen -->
+    <string name="title_activity_guide">ガイド</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <!-- Tab title in guide screen -->
+    <string name="tab_title_features">特長</string>
+    <string name="tab_title_customize">カスタマイズする</string>
+    <string name="tab_title_contact">コンタクト</string>
+
+    <!-- Features tab content  -->
+    <string name="features_title1">長押しして移動</string>
+    <string name="features_subtitle_title1">または簡単なクリック</string>
+
+    <string name="features_connect_blue">ブルートゥース経由で接続します</string>
+    <string name="features_settings">設定</string>
+    <string name="features_people">人物を選択してください</string>
+    <string name="features_title2">メッセージを送信</string>
+    <string name="features_sms_headphones">メッセージを送信するためにヘッドフォンのボタンを使用して、</string>
+    <string name="features_sms_button">メッセージを送信するボタンを押します</string>
+
+    <!-- Customize tab content -->
+    <string name="customize_title1">パーソナライズ</string>
+    <string name="customize_send_suggestions">あなたの提案を送信</string>
+    <string name="customize_activate_media_btn">メディアボタンをアクティブに</string>
+    <string name="customize_paid_version">アプリの有料版をお試しください</string>
+    <string name="customize_title2">改善</string>
+    <string name="customize_ringtone">着信音を選択してください</string>
+    <string name="customize_template">メッセージテンプレートを作成します。</string>
+    <string name="customize_signature">すべてのメッセージに署名</string>
+
 </resources>

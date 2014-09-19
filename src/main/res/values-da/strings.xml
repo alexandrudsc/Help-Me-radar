@@ -88,4 +88,38 @@
     <string name="title_other_devices">Andre enheder </string>
     <string name="button_scan">Søg</string>
 
+    <!-- Option name in menu on settings screen -->
+    <string name="action_explore">Udforsk</string>
+
+    <!-- Words displayed in guide screen -->
+    <string name="title_activity_guide">Guide</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <!-- Tab title in guide screen -->
+    <string name="tab_title_features">Funktioner </string>
+    <string name="tab_title_customize">Tilpas</string>
+    <string name="tab_title_contact">Kontakt</string>
+
+    <!-- Features tab content  -->
+    <string name="features_title1">Lang klik og træk</string>
+    <string name="features_subtitle_title1">eller enkelt klik </string>
+
+    <string name="features_connect_blue">Tilslut via bluetooth</string>
+    <string name="features_settings">Indstillinger </string>
+    <string name="features_people">Vælg personer</string>
+    <string name="features_title2">Send SMS </string>
+    <string name="features_sms_headphones">Brug hovedtelefonerne knappen for at sende beskeder</string>
+    <string name="features_sms_button">Tryk på knappen for at sende beskeder</string>
+
+    <!-- Customize tab content -->
+    <string name="customize_title1">TILPAS</string>
+    <string name="customize_send_suggestions">Send dine forslag</string>
+    <string name="customize_activate_media_btn">Media knap for at aktivere</string>
+    <string name="customize_paid_version">Prøv den betalte version af app</string>
+    <string name="customize_title2">FORBEDRING</string>
+    <string name="customize_ringtone">Vælg en ringetone</string>
+    <string name="customize_template">Opret en besked skabelon</string>
+    <string name="customize_signature">Underskrive alle dine beskeder</string>
 </resources>

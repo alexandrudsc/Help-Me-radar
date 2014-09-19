@@ -87,4 +87,39 @@
     <string name="title_other_devices">अन्य उपकरणों </string>
     <string name="button_scan">खोज</string>
 
+    <!-- Option name in menu on settings screen -->
+    <string name="action_explore">अन्वेषण </string>
+
+    <!-- Words displayed in guide screen -->
+    <string name="title_activity_guide">गाइड</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <!-- Tab title in guide screen -->
+    <string name="tab_title_features">सुविधाएँ </string>
+    <string name="tab_title_customize">बनाइए</string>
+    <string name="tab_title_contact">संपर्क</string>
+
+    <!-- Features tab content  -->
+    <string name="features_title1">लांग क्लिक करें और कदम</string>
+    <string name="features_subtitle_title1">या साधारण क्लिक करें </string>
+
+    <string name="features_connect_blue">ब्लूटूथ के माध्यम से कनेक्ट </string>
+    <string name="features_settings">सेटिंग्स</string>
+    <string name="features_people">व्यक्तियों चुनें </string>
+    <string name="features_title2">संदेश भेजें </string>
+    <string name="features_sms_headphones">संदेश भेजने के लिए हेडफ़ोन बटन का प्रयोग करें </string>
+    <string name="features_sms_button">संदेश भेजने के लिए बटन दबाएँ</string>
+
+    <!-- Customize tab content -->
+    <string name="customize_title1">निजीकृत </string>
+    <string name="customize_send_suggestions">अपने सुझाव भेजें </string>
+    <string name="customize_activate_media_btn">मीडिया बटन को सक्रिय </string>
+    <string name="customize_paid_version">अनुप्रयोग का भुगतान किया संस्करण का प्रयास करें</string>
+    <string name="customize_title2">सुधार</string>
+    <string name="customize_ringtone">एक रिंगटोन चुनें</string>
+    <string name="customize_template">एक संदेश टेम्पलेट बनाएँ</string>
+    <string name="customize_signature">आपके सभी संदेशों पर हस्ताक्षर</string>
+
 </resources>

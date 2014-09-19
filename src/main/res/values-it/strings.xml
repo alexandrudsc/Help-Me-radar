@@ -86,4 +86,39 @@
     <string name="title_paired_devices">dispositivi associati</string>
     <string name="title_other_devices">Altri dispositivi </string>
     <string name="button_scan">Ricerca</string>
+
+    <!-- Option name in menu on settings screen -->
+    <string name="action_explore">Esplorare </string>
+
+    <!-- Words displayed in guide screen -->
+    <string name="title_activity_guide">Guida </string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <!-- Tab title in guide screen -->
+    <string name="tab_title_features">Lineamenti</string>
+    <string name="tab_title_customize">Personalizzare</string>
+    <string name="tab_title_contact">Contatto</string>
+
+    <!-- Features tab content  -->
+    <string name="features_title1">Lungo clic e spostare</string>
+    <string name="features_subtitle_title1">o semplice click</string>
+
+    <string name="features_connect_blue">Connetti tramite bluetooth</string>
+    <string name="features_settings">Impostazioni </string>
+    <string name="features_people">Scegli le persone</string>
+    <string name="features_title2">Inviare messaggi </string>
+    <string name="features_sms_headphones">Utilizzare il pulsante cuffie per inviare messaggi </string>
+    <string name="features_sms_button">Premere il pulsante per inviare messaggi</string>
+
+    <!-- Customize tab content -->
+    <string name="customize_title1">PERSONALIZZA</string>
+    <string name="customize_send_suggestions">Invia i tuoi suggerimenti </string>
+    <string name="customize_activate_media_btn">Tasto multimediale Attiva</string>
+    <string name="customize_paid_version">Provate la versione a pagamento della app</string>
+    <string name="customize_title2">MIGLIORAMENTO </string>
+    <string name="customize_ringtone">Scegliere una suoneria </string>
+    <string name="customize_template">Creazione di un modello di messaggio </string>
+    <string name="customize_signature">Firmare tutti i messaggi</string>
 </resources>

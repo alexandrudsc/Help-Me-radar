@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:textSize="@dimen/gps_coord_size"/>
 
-    <TextView android:id="@+id/phone_number"
+    <TextView android:id="@+id/address"
         android:layout_below="@id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,7 +23,7 @@
     <TextView
         android:text="@string/hold_to_remove"
         android:textSize="12sp"
-        android:layout_below="@id/phone_number"
+        android:layout_below="@id/address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

@@ -87,4 +87,39 @@
     <string name="title_other_devices">Otros dispositivos </string>
     <string name="button_scan">Scan</string>
 
+    <!-- Option name in menu on settings screen -->
+    <string name="action_explore">Explore </string>
+
+    <!-- Words displayed in guide screen -->
+    <string name="title_activity_guide">Guía </string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <!-- Tab title in guide screen -->
+    <string name="tab_title_features">Características</string>
+    <string name="tab_title_customize">Personalizar</string>
+    <string name="tab_title_contact">Contacto</string>
+
+    <!-- Features tab content  -->
+    <string name="features_title1">Larga clic y movimientoe</string>
+    <string name="features_subtitle_title1">o simple clic </string>
+
+    <string name="features_connect_blue">Conectar a través de bluetooth</string>
+    <string name="features_settings">Ajustes</string>
+    <string name="features_people">Elija personas</string>
+    <string name="features_title2">Enviar SMS</string>
+    <string name="features_sms_headphones">Utilice el botón de los auriculares para enviar mensajes</string>
+    <string name="features_sms_button">Pulse el botón para enviar mensajes</string>
+
+    <!-- Customize tab content -->
+    <string name="customize_title1">PERSONALIZAR</string>
+    <string name="customize_send_suggestions">Envíe sus sugerencias</string>
+    <string name="customize_activate_media_btn">Activar botón multimedia </string>
+    <string name="customize_paid_version">Prueba la versión de pago de la aplicación</string>
+    <string name="customize_title2">MEJORA</string>
+    <string name="customize_ringtone">Elegir un ringtone</string>
+    <string name="customize_template">Crear una plantilla de mensaje</string>
+    <string name="customize_signature">Firmar todos los mensajes</string>
+
 </resources>

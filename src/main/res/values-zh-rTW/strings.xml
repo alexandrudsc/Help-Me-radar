@@ -86,4 +86,41 @@
     <string name="title_paired_devices">配對設備 </string>
     <string name="title_other_devices">其他設備 </string>
     <string name="button_scan">搜索</string>
+
+    <!-- Option name in menu on settings screen -->
+    <string name="action_explore">瀏覽</string>
+
+    <!-- Words displayed in guide screen -->
+    <string name="title_activity_guide">指南</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <!-- Tab title in guide screen -->
+    <string name="tab_title_features">產品特點</string>
+    <string name="tab_title_customize">自定義</string>
+    <string name="tab_title_contact">聯繫我們</string>
+
+    <!-- Features tab content  -->
+    <string name="features_title1">長按並移動</string>
+    <string name="features_subtitle_title1">或者簡單的點擊</string>
+
+    <string name="features_connect_blue">通過藍牙連接</string>
+    <string name="features_settings">設置</string>
+    <string name="features_people">選擇人</string>
+    <string name="features_title2">發送短信</string>
+    <string name="features_sms_headphones">使用耳機按鈕來發送郵件</string>
+    <string name="features_sms_button">按下按鈕來發送消息</string>
+
+    <!-- Customize tab content -->
+    <string name="customize_title1">個性化</string>
+    <string name="customize_send_suggestions">請將您的意見</string>
+    <string name="customize_activate_media_btn">激活媒體按鈕</string>
+    <string name="customize_paid_version">嘗試應用程序的付費版本</string>
+    <string name="customize_title2">改進</string>
+    <string name="customize_ringtone">選擇鈴聲</string>
+    <string name="customize_template">創建郵件模板</string>
+    <string name="customize_signature">註冊您的所有郵件</string>
+
+
 </resources>

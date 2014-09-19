@@ -86,4 +86,40 @@
     <string name="title_paired_devices">Сопряженные устройства </string>
     <string name="title_other_devices">Другие устройства </string>
     <string name="button_scan">поиск</string>
+
+    <!-- Option name in menu on settings screen -->
+    <string name="action_explore">Узнать</string>
+
+    <!-- Words displayed in guide screen -->
+    <string name="title_activity_guide">Руководство</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <!-- Tab title in guide screen -->
+    <string name="tab_title_features">Особенности</string>
+    <string name="tab_title_customize">Переключить</string>
+    <string name="tab_title_contact">Связаться</string>
+
+    <!-- Features tab content  -->
+    <string name="features_title1">Продолжительное нажатие и движение</string>
+    <string name="features_subtitle_title1">или просто нажмите</string>
+
+    <string name="features_connect_blue">Подключение через Bluetooth</string>
+    <string name="features_settings">Настройки</string>
+    <string name="features_people">Выберите лиц </string>
+    <string name="features_title2">Отправить SMS </string>
+    <string name="features_sms_headphones">Используйте кнопку наушники для отправки сообщений</string>
+    <string name="features_sms_button">Нажмите кнопку для отправки сообщений</string>
+
+    <!-- Customize tab content -->
+    <string name="customize_title1">ПЕРСОНАЛИЗАЦИЯ</string>
+    <string name="customize_send_suggestions">Присылайте свои предложения</string>
+    <string name="customize_activate_media_btn">Активируйте кнопку СМИ</string>
+    <string name="customize_paid_version">Попробуйте платную версию приложения</string>
+    <string name="customize_title2">УЛУЧШЕНИЕ</string>
+    <string name="customize_ringtone">Выберите мелодию</string>
+    <string name="customize_template">Создать шаблон сообщения</string>
+    <string name="customize_signature">Войдите все ваши сообщения</string>
+
 </resources>
