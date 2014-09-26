@@ -74,7 +74,8 @@
             android:layout_height="72dp" />
 
         <TextView
-            android:text="mail@helpmeradar.com"
+            android:id="@+id/contact_us_email"
+            android:text="helpmeradar@gmail.com"
             android:textColor="@android:color/white"
             android:gravity="center"
             android:textSize="20sp"

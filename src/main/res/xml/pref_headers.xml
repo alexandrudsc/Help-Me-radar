@@ -10,4 +10,8 @@
         android:fragment="com.developer.alexandru.helpmeradar.SettingsActivity$NotificationPreferenceFragment"
         android:title="@string/pref_header_notifications" />
 
+    <header
+        android:fragment="com.developer.alexandru.helpmeradar.SettingsActivity$AlertsPreferencesFragment"
+        android:title="@string/pref_header_alerts" />
+
 </preference-headers>

@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-String APK_NAME = "Help Me radar "
+String APK_NAME = "Help Me radar"
 android {
     compileSdkVersion 20
     buildToolsVersion '20.0.0'
@@ -8,8 +8,8 @@ android {
         applicationId 'com.developer.alexandru.helpmeradar'
         minSdkVersion 11
         targetSdkVersion 19
-        versionCode 1
-        versionName '1.0'
+        versionCode 3
+        versionName '1.0.2'
     }
 
     buildTypes {
@@ -21,13 +21,12 @@ android {
                 variant.outputFile = new File(file.parent, file.name.replace(".apk", "-" + defaultConfig.versionName + ".apk"))
             }
             project.archivesBaseName = APK_NAME
-
         }
     }
     productFlavors {
-        full {
-            applicationId "com.developer.alexandru.helpmeradar"
-            versionName "1.0 - pro"
+        demo {
+            applicationId 'com.developer.alexandru.helpmeradar'
+            versionName '1.0.2 - demo'
         }
     }
 }
@@ -44,4 +43,5 @@ dependencies {
     compile files('libs/activation.jar')
     compile files('libs/additionnal.jar')
     compile files('libs/mail.jar')
+    compile project(':facebook')
 }

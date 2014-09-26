@@ -6,26 +6,47 @@
     tools:context="com.developer.alexandru.helpmeradar.ContactsActivity">
 
     <LinearLayout
-        android:id="@+id/btn_type_new_contact"
+        android:id="@+id/bottom_bar"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/button_type_contact"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="@dimen/type_contact_button">
 
         <TextView
+            android:id="@+id/btn_type_new_contact"
             android:text="@string/text_btn_type_new_contact"
-            android:textSize="@dimen/medium_text"
+            android:textSize="@dimen/small_text"
+            android:textColor="@android:color/white"
+            android:background="@drawable/button_type_contact"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_width="0dip"
+            android:layout_weight="1.3"
+            android:layout_height="match_parent" />
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/btn_type_new_email"
+            android:text="@string/text_btn_type_new_email"
+            android:background="@drawable/button_type_contact"
+            android:textSize="@dimen/small_text"
             android:textColor="@android:color/white"
             android:textStyle="bold"
             android:gravity="center"
-            android:layout_width="match_parent"
+            android:layout_width="0dip"
+            android:layout_weight="1"
             android:layout_height="match_parent" />
+
+
     </LinearLayout>
 
     <ListView android:id="@android:id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/btn_type_new_contact"/>
+        android:layout_above="@id/bottom_bar"/>
 
     <TextView android:id="@android:id/empty"
         android:text="@string/no_contacts"

@@ -17,6 +17,7 @@ import android.location.LocationManager;
 import android.location.LocationProvider;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
@@ -203,7 +204,7 @@ public class GPSTracker extends Service implements LocationListener {
         alertDialog.setPositiveButton("Settings", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog,int which) {
                 Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                mainActivity.getSharedPreferences(SettingsActivity.PREF_FILE, MODE_PRIVATE).edit().putBoolean(
+                PreferenceManager.getDefaultSharedPreferences(mainActivity).edit().putBoolean(
                         SettingsActivity.PREF_NAME_ALLOW_GPS, true).commit();
                 mainActivity.startActivity(intent);
             }
@@ -213,7 +214,7 @@ public class GPSTracker extends Service implements LocationListener {
         alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
-                mainActivity.getSharedPreferences(SettingsActivity.PREF_FILE, MODE_PRIVATE).edit().putBoolean(
+                PreferenceManager.getDefaultSharedPreferences(mainActivity).edit().putBoolean(
                         SettingsActivity.PREF_NAME_ALLOW_GPS, false).commit();
             }
         });
@@ -230,36 +231,21 @@ public class GPSTracker extends Service implements LocationListener {
             this.location = location;
             this.latitude = location.getLatitude();
             this.longitude = location.getLongitude();
-            final SharedPreferences prefs = mainActivity.getSharedPreferences(SettingsActivity.PREF_FILE, MODE_PRIVATE);
+            final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mainActivity);
 
             prefs.edit().putString(SettingsActivity.PREF_NAME_LAST_GPS_COORDS, location.getLatitude() +
-                    " " + location.getLongitude()).commit();
+                    " " + location.getLongitude()).apply();
             if(textView == null)
                 textView = (TextView) mainActivity.findViewById(R.id.label_gps_coords);
             if (prefs.getBoolean(SettingsActivity.PREF_NAME_ALLOW_GPS, true)) {
                 if(textView == null)
                     textView = (TextView) mainActivity.findViewById(R.id.label_gps_coords);
-                textView.setText(mainActivity.getResources().getString(R.string.latitude) + " " + getLatitude() + " " +
-                                 mainActivity.getResources().getString(R.string.longitude) + " " + getLongitude() );
+                textView.setText("Lat " + getLatitude() + " " +
+                                 "Lng " + getLongitude() );
 
             }else
                 textView.setText(mainActivity.getResources().getString(R.string.no_coords));
-            /*mainActivity.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        Log.d(TAG, "new location");
-                        if (prefs.getBoolean(SettingsActivity.PREF_NAME_ALLOW_GPS, true))
-                            ((TextView) mainActivity.findViewById(R.id.label_gps_coords)).setText(getResources().getString(R.string.latitude) + " "
-                                    + location.getLatitude() + " " + getResources().getString(R.string.longitude) + " "
-                                    + location.getLongitude());
-                        prefs.edit().putString(SettingsActivity.PREF_NAME_LAST_GPS_COORDS, location.getLatitude() +
-                                        " " + location.getLongitude()
-                        ).commit();
-                    }catch (Exception e){
-                    }
-                }
-            });*/
+
         }catch (Exception e){
             e.printStackTrace();
         }

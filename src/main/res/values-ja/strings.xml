@@ -122,4 +122,14 @@
     <string name="customize_template">メッセージテンプレートを作成します。</string>
     <string name="customize_signature">すべてのメッセージに署名</string>
 
+    <!-- Send alerts preferences -->
+    <string name="pref_send_sms">メッセージを送信 </string>
+    <string name="pref_send_emails">メールを送信</string>
+    <string name="pref_bluetooth_messages">ブルートゥース 通知を送信する</string>
+    <string name="pref_post_facebook">Facebookのポスト</string>
+    <string name="pref_post_twitter">Twitterで投稿 </string>
+    <string name="pref_header_alerts">アラート </string>
+
+    <string name="text_btn_type_new_email">新しい電子メール</string>
+
 </resources>

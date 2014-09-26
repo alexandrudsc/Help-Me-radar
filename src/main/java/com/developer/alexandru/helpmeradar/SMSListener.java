@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.PowerManager;
+import android.preference.PreferenceManager;
 import android.provider.Telephony;
 import android.telephony.SmsMessage;
 import android.util.Log;
@@ -71,7 +72,7 @@ public class SMSListener extends BroadcastReceiver {
 
     private void handleMessage(Bundle bundle, Context context) {
         //If user allows incoming messages then react if PANIC MESSAGE received
-        if(context.getSharedPreferences(SettingsActivity.PREF_FILE, Context.MODE_PRIVATE).
+        if(PreferenceManager.getDefaultSharedPreferences(context).
                 getBoolean(SettingsActivity.PREF_NAME_ALLOW_INCOMING_SMS, true)) {
             /*Intent forIntentService = new Intent(context, ServiceGetMessage.class);
             forIntentService.putExtras(intent.getExtras());

@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -25,11 +26,14 @@ import java.util.ArrayList;
 
 /**
  * Created by Alexandru
+ * Activity started when SMS or bluetooth notification received
  */
 public class AlertActivity extends Activity {
+    //debug
     private final static String TAG ="ALERT ACTIVITY";
+    private final static boolean D = true;
 
-    //Handler reposting runnables until touch
+    //Handler restarting runnables until touch
     private Runnable sound, blink;
     private Handler soundHandler, blinkingHandler;
 
@@ -42,6 +46,7 @@ public class AlertActivity extends Activity {
     TextView message;
     TextView link;
     String receivedText;
+
     //Blinking frequency
     private static final int DELAY = 200;
 
@@ -81,21 +86,25 @@ public class AlertActivity extends Activity {
         });
         //When link is clicked stop activity
         link = (TextView)findViewById(R.id.link);
-        link.setOnTouchListener(new View.OnTouchListener(){
+        link.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if(event.getAction() == MotionEvent.ACTION_DOWN){
-                    stopRingBlinkVibrate();
-                    finish();
-                    return true;
-                }
-                return false;
+            public void onClick(View v) {
+                stopRingBlinkVibrate();
+                String text = ((TextView)v).getText().toString();
+                String[] splitted = text.split("%2c");
+                Uri uri = Uri.parse(splitted[0]);
+                if( D) Log.d(TAG, uri.toString());
+                Intent i = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(i);
+                finish();
             }
+
         });
 
     }
 
-    /*Do all tasks like retrieve message and maps link in here, because the intent starting this activity
+    /**
+    * Do all tasks like retrieve message and maps link in here, because the intent starting this activity
     * might actually be a new intent with onNewIntent() (this activity is singleInstance), therefore
     * not always the onCreate() is called
     */
@@ -111,31 +120,37 @@ public class AlertActivity extends Activity {
         if(link == null)
             link = (TextView)findViewById(R.id.link);
 
-        //Received text.Remove header if needed.
+        //Received text.Remove header if needed (in case is an SMS)
         //Split the text into the actual message and the link
         receivedText = getIntent().getStringExtra("message");
         if(receivedText.startsWith(MainActivity.MESSAGE_FROM_PANIC_RADAR))
             receivedText = receivedText.substring(MainActivity.MESSAGE_FROM_PANIC_RADAR.length() + 1);
 
         //Set text to "message" text view and form a link for "link" text view
-        String[] textAndLink = receivedText.split(Actions.HEADER_LINK_GOOGLE_MAPS);
+        String[] textAndLink = receivedText.split(" ");
+
         try{
-            message.setText(textAndLink[0]);
-            link.setText(String.format("%s%s", Actions.HEADER_LINK_GOOGLE_MAPS, textAndLink[1]));
+            String mess = textAndLink[0] + " " ;
+            for (int i = 1 ; i < textAndLink.length - 1; i++ )
+                mess += (textAndLink[i] + " ");
+            message.setText(mess);
+            link.setText(String.format("%s%s", textAndLink[textAndLink.length - 1],""));
+
             //Try to convert coords into location name.Could fail if
             // no network connection
             if(getLocationName == null)
-                getLocationName = new Thread(new RunnableGetLocation(this, textAndLink[0], textAndLink[1]));
+                getLocationName = new Thread(new RunnableGetLocation(this, textAndLink[textAndLink.length - 1] ));
             //Do not start the thread twice and display same message twice.
             if(!getLocationName.isAlive())
                 try {
                     getLocationName.start();
                 }catch (IllegalThreadStateException e){
                     getLocationName = null;
-                    getLocationName = new Thread(new RunnableGetLocation(this, textAndLink[0], textAndLink[1]));
+                    getLocationName = new Thread(new RunnableGetLocation(this, textAndLink[textAndLink.length - 1]));
                     getLocationName.start();
                 }
         }catch (IndexOutOfBoundsException e){
+            if(D) e.printStackTrace();
         }
 
         //Adjust volume to max, but retain current user's volume
@@ -163,7 +178,7 @@ public class AlertActivity extends Activity {
         blinkingHandler.post(blink);
 
         //Vibrator
-        if(getSharedPreferences(SettingsActivity.PREF_FILE, MODE_PRIVATE).getBoolean(
+        if(PreferenceManager.getDefaultSharedPreferences(this).getBoolean(
                 SettingsActivity.PREF_NAME_ALLOW_VIBRATE, true)){
             if(vibrator == null)
                 vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
@@ -217,7 +232,7 @@ public class AlertActivity extends Activity {
     }
 
     private String getRingtoneName(){
-        return  getSharedPreferences(SettingsActivity.PREF_FILE, MODE_PRIVATE).getString(
+        return  PreferenceManager.getDefaultSharedPreferences(this).getString(
                 SettingsActivity.PREF_NAME_DEFAULT_RINGTONE, "none");
     }
 
@@ -296,19 +311,22 @@ public class AlertActivity extends Activity {
         }
     }
 
-    //Runnable to be runned in a background thread to retrieve human readable location
+    //Runnable to be ran in a background thread to retrieve human readable location
     private class RunnableGetLocation implements Runnable{
 
         private Context mContext;
         private double lat, lng;
-        private String receivedText;
-        public RunnableGetLocation(Context context,String receivedText, String receivedLink){
+
+        public RunnableGetLocation(Context context, String receivedLink){
             this.mContext = context;
-            this.receivedText = receivedText;
             try {
-                String[] latLng = receivedLink.split(",");
+                String data = receivedLink.substring(Actions.HEADER_LINK_GOOGLE_MAPS.length());
+                String[] latLng = data.split("%2c");
                 lat = Double.valueOf(latLng[0]);
                 lng = Double.valueOf(latLng[1]);
+                //Make a valid URL
+                link.setText(Actions.HEADER_LINK_GOOGLE_SEARCH + lat + "%2C" + lng);
+
             }catch (ArrayIndexOutOfBoundsException e){
             }
         }
@@ -323,11 +341,19 @@ public class AlertActivity extends Activity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        message.setText(receivedText + " " + address);
+                        message.setText(message.getText() + " " + address);
+
                     }
                 });
             } catch (Exception e) {
                 e.printStackTrace();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        message.setText(message.getText() + " Lat: " + lat + " Lng: " + lng);
+
+                    }
+                });
             }
         }
     }

@@ -37,8 +37,8 @@ public class ContactsActivity extends ListActivity {
 
         this.setListAdapter(new MyListViewAdapter(this, Actions.retrieveContacts(this)));
 
-        findViewById(R.id.btn_type_new_contact).setOnClickListener(new ClickListener(this));
-
+        findViewById(R.id.btn_type_new_contact).setOnClickListener(new ClickListenerNewContact(this));
+        findViewById(R.id.btn_type_new_email).setOnClickListener(new ClickListenerNewEmail(this));
     }
 
 
@@ -68,13 +68,13 @@ public class ContactsActivity extends ListActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == PICK_CONTACT && resultCode == RESULT_OK){
+        if (requestCode == PICK_CONTACT && resultCode == RESULT_OK) {
             //Uri to the selected contact
             Uri contact = data.getData();
             ContentResolver contentResolver = getContentResolver();
             Cursor c = managedQuery(contact, null, null, null, null);
 
-            while(c.moveToNext()){
+            while (c.moveToNext()) {
                 // Id and name for the selected contact
                 String id = c.getString(c.getColumnIndex(ContactsContract.Contacts._ID));
                 String name = c.getString(c.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
@@ -83,16 +83,16 @@ public class ContactsActivity extends ListActivity {
                     // Get phone number
                     Cursor pCur = contentResolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
                             null,
-                            ContactsContract.CommonDataKinds.Phone.CONTACT_ID +" = ?",
+                            ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ?",
                             new String[]{id},
                             null);
 
-                    while(pCur.moveToNext()){
+                    while (pCur.moveToNext()) {
                         String phoneNumber = pCur.getString(pCur.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
                         getSharedPreferences(CONTACTS_PREF_FILE, MODE_PRIVATE).edit().putString("contact_" + getListAdapter().getCount(),
                                 name + SPLITTER + phoneNumber).commit();
 
-                        ((MyListViewAdapter)getListAdapter()).notifyDataSetChanged();
+                        ((MyListViewAdapter) getListAdapter()).notifyDataSetChanged();
                         break;
                     }
                 }
@@ -116,7 +116,7 @@ public class ContactsActivity extends ListActivity {
                     getSharedPreferences(CONTACTS_PREF_FILE, MODE_PRIVATE).edit().putString("contact_" + getListAdapter().getCount(),
                             name + SPLITTER + email).commit();
 
-                    ((MyListViewAdapter)getListAdapter()).notifyDataSetChanged();
+                    ((MyListViewAdapter) getListAdapter()).notifyDataSetChanged();
                     break;
                 }
                 emailCur.close();
@@ -124,17 +124,16 @@ public class ContactsActivity extends ListActivity {
         }
     }
 
-    private void deleteAll(){
-
-    }
-
-    private class ClickListener implements View.OnClickListener{
+    /**
+     * Click listener for the add new contact button
+     */
+    private class ClickListenerNewContact implements View.OnClickListener{
 
         private Dialog dialog;
         private AlertDialog.Builder builder;
         View dialogView;
 
-        public ClickListener(Context context){
+        public ClickListenerNewContact(Context context){
             builder = new AlertDialog.Builder(context);
 
             dialogView = View.inflate(context, R.layout.type_new_contact, null);
@@ -151,9 +150,52 @@ public class ContactsActivity extends ListActivity {
                         public void onClick(DialogInterface dialog, int which) {
                             String name = ((EditText)dialogView.findViewById(R.id.new_name)).getText().toString();
                             String phoneNumber = ((EditText)dialogView.findViewById(R.id.new_phone_number)).getText().toString();
+                            //Input data validation
                             if(name != null && phoneNumber != null){
                                 getSharedPreferences(CONTACTS_PREF_FILE, MODE_PRIVATE).edit().putString("contact_" + getListAdapter().getCount(),
                                         name + SPLITTER + phoneNumber).commit();
+                                ((MyListViewAdapter)getListAdapter()).notifyDataSetChanged();
+                                dialog.cancel();
+                            }
+                        }
+                    });
+            dialog = builder.create();
+        }
+
+        @Override
+        public void onClick(View v) {
+            dialog.show();
+        }
+    }
+
+    private class ClickListenerNewEmail implements View.OnClickListener{
+
+        private Dialog dialog;
+        private AlertDialog.Builder builder;
+        View dialogView;
+
+        public ClickListenerNewEmail(Context context){
+            builder = new AlertDialog.Builder(context);
+
+            dialogView = View.inflate(context, R.layout.type_new_email, null);
+            builder.setCancelable(true)
+                    .setView(dialogView)
+                    .setNegativeButton(getResources().getString(R.string.negative_button), new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    })
+                    .setPositiveButton(getResources().getString(R.string.positive_button), new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            String name = ((EditText)dialogView.findViewById(R.id.new_name)).getText().toString();
+                            String email = ((EditText)dialogView.findViewById(R.id.new_email)).getText().toString();
+
+                            //Input data validation
+                            if(name != null && email != null){
+                                getSharedPreferences(CONTACTS_PREF_FILE, MODE_PRIVATE).edit().putString("contact_" + getListAdapter().getCount(),
+                                        name + SPLITTER + email).commit();
                                 ((MyListViewAdapter)getListAdapter()).notifyDataSetChanged();
                                 dialog.cancel();
                             }

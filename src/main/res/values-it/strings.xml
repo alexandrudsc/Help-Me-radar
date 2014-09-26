@@ -121,4 +121,14 @@
     <string name="customize_ringtone">Scegliere una suoneria </string>
     <string name="customize_template">Creazione di un modello di messaggio </string>
     <string name="customize_signature">Firmare tutti i messaggi</string>
+
+    <!-- Send alerts preferences -->
+    <string name="pref_send_sms">Inviare messaggi</string>
+    <string name="pref_send_emails">Inviare emails</string>
+    <string name="pref_bluetooth_messages">Invia notifiche Bluetooh</string>
+    <string name="pref_post_facebook">Pubblica su Facebook</string>
+    <string name="pref_post_twitter">Pubblica su Twitter</string>
+    <string name="pref_header_alerts">Avvisi </string>
+
+    <string name="text_btn_type_new_email">Nuova e-mail</string>
 </resources>

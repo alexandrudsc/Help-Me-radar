@@ -21,18 +21,26 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/ic_launcher2"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Holo.NoActionBar" >
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id_2"/>
+        <activity android:name="com.facebook.LoginActivity" android:label="LoginActivity"/>
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="oauth" android:host="redirect_to_app"/>
             </intent-filter>
         </activity>
         <activity
@@ -55,6 +63,14 @@
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".LoginActivityTwitter"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.developer.alexandru.helpmeradar.MainActivity" />
         </activity>
 
         <!-- Activity displaying available bluetooth devices -->
@@ -95,8 +111,7 @@
 
         <!-- Receiver for MEDIA_BUTTON -->
         <receiver
-            android:name=".HeadphonesActionReceiver"
-            android:enabled="true" >
+            android:name=".HeadphonesActionReceiver">
             <intent-filter android:priority="2147483647" >
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
                 <action android:name="android.media.AUDIO_BECOMING_NOISY" />

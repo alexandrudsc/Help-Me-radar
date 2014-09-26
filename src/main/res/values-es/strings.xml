@@ -122,4 +122,14 @@
     <string name="customize_template">Crear una plantilla de mensaje</string>
     <string name="customize_signature">Firmar todos los mensajes</string>
 
+    <!-- Send alerts preferences -->
+    <string name="pref_send_sms">Enviar mensajes</string>
+    <string name="pref_send_emails">Enviar emails</string>
+    <string name="pref_bluetooth_messages">Enviar notificaciones Bluetooh</string>
+    <string name="pref_post_facebook">Publicar en Facebook</string>
+    <string name="pref_post_twitter">Publicar en Twitter</string>
+    <string name="pref_header_alerts">Alertas </string>
+
+    <string name="text_btn_type_new_email">Nueva email</string>
+
 </resources>

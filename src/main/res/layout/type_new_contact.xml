@@ -33,7 +33,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/divider2"
         android:textSize="@dimen/small_text"
-        android:inputType="phone"
-        android:layout_weight="1"/>
+        android:inputType="phone"/>
 
 </RelativeLayout>

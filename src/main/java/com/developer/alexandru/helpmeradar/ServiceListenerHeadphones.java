@@ -10,33 +10,33 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.media.AudioManager;
+import android.os.Handler;
 import android.os.IBinder;
+import android.provider.Settings;
 import android.telephony.SmsManager;
 import android.util.Log;
 import android.widget.Toast;
 
 /**
  * Created by Alexandru on 8/18/2014.
+ * Service running in the background containing the MEDIA_BUTTON receiver
+ * The receiver must be registered this way, because in the manifest is immediately disabled
  */
 public class ServiceListenerHeadphones extends Service {
 
-    private static final int PRIORITY = 1000;
-
-    private HeadphonesActionReceiver receiver;
+    //Receiver for MEDIA_BUTTON_ACTION
     private ComponentName eventReceiver;
+
     @Override
     public void onCreate() {
-        receiver = new HeadphonesActionReceiver();
-        IntentFilter intentFilter = new IntentFilter(Intent.ACTION_MEDIA_BUTTON);
-
-        intentFilter.setPriority(Integer.MAX_VALUE);
-        registerReceiver(receiver, intentFilter);
-
+        //Register the receiver for MEDIA_BUTTON to be the sole receiver
         eventReceiver = new ComponentName(this, HeadphonesActionReceiver.class);
         ((AudioManager)getSystemService(AUDIO_SERVICE)).registerMediaButtonEventReceiver(eventReceiver);
 
+        //Register SMS sending status receiver
         IntentFilter smsResultFilter = new IntentFilter(Actions.SMS_SEND);
         registerReceiver(smsResultReceiver, smsResultFilter);
+
         Log.i(getClass().getCanonicalName().toUpperCase(), "SERVICE CREATED");
     }
 
@@ -55,20 +55,20 @@ public class ServiceListenerHeadphones extends Service {
     @Override
     public void onDestroy() {
         try {
-            unregisterReceiver(receiver);
             Log.i(getClass().getCanonicalName().toUpperCase(), "SERVICE STOPPED");
-
         }catch (NullPointerException e){
-            ;
+            //;
         }
         try {
             ((AudioManager) getSystemService(AUDIO_SERVICE)).unregisterMediaButtonEventReceiver(eventReceiver);
         }catch (Exception e){
+            //
         }
 
         try {
             unregisterReceiver(smsResultReceiver);
         }catch (Exception e){
+            //
         }
 
         super.onDestroy();

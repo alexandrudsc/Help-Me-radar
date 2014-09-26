@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:key="pref_send_sms"
+        android:title="@string/pref_send_sms"
+        android:defaultValue="true"/>
+
+    <CheckBoxPreference
+        android:key="pref_send_emails"
+        android:title="@string/pref_send_emails"
+        android:defaultValue="false"/>
+
+    <CheckBoxPreference
+        android:key="pref_send_bluetooth"
+        android:title="@string/pref_bluetooth_messages"
+        android:defaultValue="true"/>
+
+    <CheckBoxPreference
+        android:key="pref_post_facebook"
+        android:title="@string/pref_post_facebook"
+        android:defaultValue="false"/>
+
+    <CheckBoxPreference
+        android:key="pref_post_twitter"
+        android:title="@string/pref_post_twitter"
+        android:defaultValue="false"/>
+
+</PreferenceScreen>

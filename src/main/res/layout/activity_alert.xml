@@ -25,8 +25,7 @@
     <TextView
         android:id="@+id/link"
         android:layout_width="match_parent"
-        android:background="@android:color/transparent"
-        android:autoLink="web"
+        android:background="@drawable/selectable_background"
         android:layout_height="0dip"
         android:layout_weight="1"
         android:ellipsize="end"

@@ -122,4 +122,14 @@
     <string name="customize_ringtone">Vælg en ringetone</string>
     <string name="customize_template">Opret en besked skabelon</string>
     <string name="customize_signature">Underskrive alle dine beskeder</string>
+
+    <!-- Send alerts preferences -->
+    <string name="pref_send_sms">Send beskeder</string>
+    <string name="pref_send_emails">Sende e-mails</string>
+    <string name="pref_bluetooth_messages">Send Bluetooh meddelelser</string>
+    <string name="pref_post_facebook">Besked på Facebook </string>
+    <string name="pref_post_twitter">Indlæg på Twitter</string>
+    <string name="pref_header_alerts">Underretninger </string>
+
+    <string name="text_btn_type_new_email">Ny e-mail</string>
 </resources>

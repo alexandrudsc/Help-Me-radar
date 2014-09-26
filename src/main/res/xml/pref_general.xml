@@ -1,5 +1,9 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <Preference
+        android:key="explore"
+        android:title="@string/action_explore"/>
+
     <CheckBoxPreference
         android:key="gps_checkbox"
         android:title="@string/pref_title_gps"
@@ -8,7 +12,7 @@
 
     <CheckBoxPreference
         android:key="headphones_checkbox"
-        android:enabled="true"
+        android:enabled="false"
         android:title="@string/pref_title_headphones"
         android:summary="@string/pref_description_headphones"
         android:defaultValue="false" />

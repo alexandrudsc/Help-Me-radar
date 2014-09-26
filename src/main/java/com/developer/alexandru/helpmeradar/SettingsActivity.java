@@ -38,15 +38,11 @@ import java.util.List;
  */
 public class SettingsActivity extends PreferenceActivity {
 
-    public static final String PREF_FILE = "com.developer.alexandru.helpmeradar_preferences";
-
-
     public static final String PREF_NAME_DEFAULT_RINGTONE = "notifications_new_message_ringtone";
 
     public static final String HEADSET_LISTENER_PREF = "headphones_checkbox";
 
     public static final String PREF_NAME_DEFAULT_TEMPLATE = "message_text";
-    public static final String MESSAGE_DEFALUT_TEMPLATE = "I need help!Please hurry!";
 
     public static final String PREF_NAME_ALLOW_INCOMING_SMS = "notifications_new_message";
     public static final String PREF_NAME_ALLOW_GPS = "gps_checkbox";
@@ -54,6 +50,14 @@ public class SettingsActivity extends PreferenceActivity {
     public static final String PREF_NAME_ALLOW_BT = "allow_bluetooth";
     public static final String PREF_NAME_ALLOW_VIBRATE = "notifications_new_message_vibrate";
     public static final String PREF_NAME_USER_NAME = "name";
+
+    public static final String PREF_NAME_SEND_SMS = "pref_send_sms";
+    public static final String PREF_NAME_SEND_EMAILS = "pref_send_emails";
+    public static final String PREF_NAME_SEND_BLUETOOTH = "pref_send_bluetooth";
+    public static final String PREF_NAME_POST_FACEBOOK = "pref_post_facebook";
+    public static final String PREF_NAME_POST_TWITTER = "pref_post_twitter";
+
+    private Intent serviceHeadsetIntent;
     /**
      * Determines whether to always show the simplified settings UI, where
      * settings are presented in a single list. When false, settings are shown
@@ -63,26 +67,8 @@ public class SettingsActivity extends PreferenceActivity {
     private static final boolean ALWAYS_SIMPLE_PREFS = false;
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.guide, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            Intent guideIntent = new Intent(this, GuideActivity.class);
-            startActivity(guideIntent);
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-
         setupSimplePreferencesScreen();
     }
 
@@ -99,11 +85,16 @@ public class SettingsActivity extends PreferenceActivity {
         // In the simplified UI, fragments are not used at all and we instead
         // use the older PreferenceActivity APIs.
 
-        // Add 'general' preferences.
+        // Add 'general' preferences and it's fake header.No pref screen yet, so must an empty screen
+        // be added from xml resources
+        addPreferencesFromResource(R.xml.pref_general_fake_header);
+        PreferenceCategory fakeHeader = new PreferenceCategory(this);
+        fakeHeader.setTitle(R.string.pref_header_general);
+        getPreferenceScreen().addPreference(fakeHeader);
         addPreferencesFromResource(R.xml.pref_general);
 
         // Add 'notifications' preferences, and a corresponding header.
-        PreferenceCategory fakeHeader = new PreferenceCategory(this);
+        fakeHeader = new PreferenceCategory(this);
         fakeHeader.setTitle(R.string.pref_header_notifications);
         getPreferenceScreen().addPreference(fakeHeader);
         addPreferencesFromResource(R.xml.pref_notification);
@@ -114,10 +105,47 @@ public class SettingsActivity extends PreferenceActivity {
         // to reflect the new value, per the Android Design guidelines.
         bindPreferenceSummaryToValue(findPreference("message_text"));
         bindPreferenceSummaryToValue(findPreference("name"));
-        //bindPreferenceSummaryToValue(findPreference("example_list"));
         bindPreferenceSummaryToValue(findPreference("notifications_new_message_ringtone"));
-        //bindPreferenceSummaryToValue(findPreference("gps_frequency"));
+
+        // Add 'notifications' preferences, and a corresponding header.
+        fakeHeader = new PreferenceCategory(this);
+        fakeHeader.setTitle(R.string.pref_header_alerts);
+        getPreferenceScreen().addPreference(fakeHeader);
+        addPreferencesFromResource(R.xml.pref_alerts);
+
     }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        //Event when the status of the receiver for MEDIA_BUTTON pref is changed
+        //If enabled start a service listening for MEDIA_ACTION
+        findPreference("headphones_checkbox").setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                final boolean isChecked = (Boolean)newValue;
+                if(serviceHeadsetIntent == null)
+                    serviceHeadsetIntent = new Intent(getApplicationContext(), ServiceListenerHeadphones.class);
+                stopService(serviceHeadsetIntent);
+                if(isChecked)
+                    startService(serviceHeadsetIntent);
+                return true;
+            }
+        });
+
+        //Click event for the first preference.Go to guide screen
+        findPreference("explore").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                Intent intent = new Intent(getApplicationContext(), GuideActivity.class);
+                startActivity(intent);
+                return false;
+            }
+        });
+    }
+
 
     /** {@inheritDoc} */
     @Override
@@ -246,7 +274,6 @@ public class SettingsActivity extends PreferenceActivity {
             // guidelines.
             bindPreferenceSummaryToValue(findPreference("message_text"));
             bindPreferenceSummaryToValue(findPreference("name"));
-            //bindPreferenceSummaryToValue(findPreference("example_list"));
         }
     }
 
@@ -270,21 +297,17 @@ public class SettingsActivity extends PreferenceActivity {
     }
 
     /**
-     * This fragment shows data and sync preferences only. It is used when the
+     * This fragment shows alerts preferences only. It is used when the
      * activity is showing a two-pane settings UI.
      */
-   /* @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    public static class DataSyncPreferenceFragment extends PreferenceFragment {
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    public static class AlertsPreferencesFragment extends PreferenceFragment {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.pref_data_sync);
+            addPreferencesFromResource(R.xml.pref_alerts);
 
-            // Bind the summaries of EditText/List/Dialog/Ringtone preferences
-            // to their values. When their values change, their summaries are
-            // updated to reflect the new value, per the Android Design
-            // guidelines.
-            bindPreferenceSummaryToValue(findPreference("gps_frequency"));
         }
-    }*/
+    }
+
 }

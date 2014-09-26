@@ -1,7 +1,5 @@
 package com.developer.alexandru.helpmeradar;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.Locale;
 
 import android.content.Intent;
@@ -36,6 +34,7 @@ public class GuideActivity extends FragmentActivity {
 
     // The URL to facebook page
     public static final String FB_URL = "https://www.facebook.com/HelpMeRadar/timeline";
+    public static final String TW_URL = "https://twitter.com/me_radar";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,12 +74,18 @@ public class GuideActivity extends FragmentActivity {
 
     //Click event on twitter address
     public void openTwitter(View view){
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(TW_URL));
+        startActivity(intent);
 
     }
 
     //Click event on email address
     public void openEmail(View view){
-
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setType("message/rfc822");
+        intent.setData(Uri.parse("mailto:" + ((TextView)findViewById(R.id.contact_us_email)).getText()));
+        startActivity(intent);
     }
 
     //Click event on "personalisation" text

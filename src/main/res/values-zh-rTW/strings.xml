@@ -122,5 +122,14 @@
     <string name="customize_template">創建郵件模板</string>
     <string name="customize_signature">註冊您的所有郵件</string>
 
+    <!-- Send alerts preferences -->
+    <string name="pref_send_sms">發送消息 </string>
+    <string name="pref_send_emails">發送電子郵件 </string>
+    <string name="pref_bluetooth_messages">送藍牙技術的通知 </string>
+    <string name="pref_post_facebook">發表在Facebook</string>
+    <string name="pref_post_twitter">發表在Twitter</string>
+    <string name="pref_header_alerts">警報 </string>
+
+    <string name="text_btn_type_new_email">新的電子郵件</string>
 
 </resources>
