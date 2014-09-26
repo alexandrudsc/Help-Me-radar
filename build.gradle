@@ -24,9 +24,9 @@ android {
         }
     }
     productFlavors {
-        demo {
-            applicationId 'com.developer.alexandru.helpmeradar'
-            versionName '1.0.2 - demo'
+        full {
+            applicationId 'com.developer.alexandru.licence.helpmeradar'
+            versionName '1.0.2 - pro'
         }
     }
 }
