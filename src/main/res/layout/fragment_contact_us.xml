@@ -75,7 +75,7 @@
 
         <TextView
             android:id="@+id/contact_us_email"
-            android:text="helpmeradar@gmail.com"
+            android:text="@string/contact_us_email_address"
             android:textColor="@android:color/white"
             android:gravity="center"
             android:textSize="20sp"

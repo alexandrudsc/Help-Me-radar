@@ -121,22 +121,22 @@ public class GPSTracker extends Service implements LocationListener {
         return location;
     }
 
-    private void registerListeners(){
-        if(locationManager == null)
+    private void registerListeners() {
+        if (locationManager == null)
             locationManager = (LocationManager) mainActivity
                     .getSystemService(LOCATION_SERVICE);
-        if(locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER))
-            locationManager.requestLocationUpdates(
-                        LocationManager.NETWORK_PROVIDER,
-                        MIN_TIME_BW_UPDATES,
-                        MIN_DISTANCE_CHANGE_FOR_UPDATES,
-                        this);
-        if(locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER))
-            locationManager.requestLocationUpdates (
-                        LocationManager.GPS_PROVIDER,
-                        MIN_TIME_BW_UPDATES,
-                        MIN_DISTANCE_CHANGE_FOR_UPDATES,
-                        this);
+
+        locationManager.requestLocationUpdates(
+                LocationManager.NETWORK_PROVIDER,
+                MIN_TIME_BW_UPDATES,
+                MIN_DISTANCE_CHANGE_FOR_UPDATES,
+                this);
+
+        locationManager.requestLocationUpdates(
+                LocationManager.GPS_PROVIDER,
+                MIN_TIME_BW_UPDATES,
+                MIN_DISTANCE_CHANGE_FOR_UPDATES,
+                this);
     }
 
     /*
