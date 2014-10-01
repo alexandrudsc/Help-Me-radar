@@ -127,6 +127,9 @@
     <string name="customize_template">Create a message template</string>
     <string name="customize_signature">Sign all your messages</string>
 
+    <!-- Contact us tab content, email address -->
+    <string name="contact_us_email_address" translatable="false">mail@helpmeradar.com</string>
+
     <!-- Send alerts preferences -->
     <string name="pref_send_sms">Send SMS</string>
     <string name="pref_send_emails">Send emails</string>
