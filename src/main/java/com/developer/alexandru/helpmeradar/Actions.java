@@ -130,7 +130,7 @@ public class Actions {
         String[] toArr = {address};
         //new MailThread( toArr, body).start();
         if(m == null)
-            m = new Mail("helpmeradar@gmail.com", "helpmeradar1");
+            m = new Mail("helpmeradar@gmail.com", "************");
         m.setTo(toArr);
         m.setFrom("helpmeradar@gmail.com");
         m.setSubject(MainActivity.MESSAGE_FROM_PANIC_RADAR);
